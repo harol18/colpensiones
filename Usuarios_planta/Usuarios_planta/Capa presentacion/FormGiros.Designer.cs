@@ -34,26 +34,26 @@
             this.btncopy_pagare = new System.Windows.Forms.PictureBox();
             this.Txtpagare = new System.Windows.Forms.TextBox();
             this.Txtnit = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.Btncopy = new System.Windows.Forms.PictureBox();
             this.Btncopy1 = new System.Windows.Forms.PictureBox();
             this.Txttotal = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.Txttotal_letras = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Txtcuota_letras = new System.Windows.Forms.TextBox();
             this.Txtplazo = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.Txtmonto = new System.Windows.Forms.TextBox();
             this.Txtcuota = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.Txtscoring = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cmbfuerza = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.Txtradicado = new System.Windows.Forms.TextBox();
             this.Txtafiliacion1 = new System.Windows.Forms.TextBox();
             this.Txtnombre = new System.Windows.Forms.TextBox();
@@ -79,22 +79,22 @@
             this.TxtIDfuncionario = new System.Windows.Forms.TextBox();
             this.Cmbestado = new System.Windows.Forms.ComboBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.Txtcomentarios = new System.Windows.Forms.TextBox();
             this.Txtplano_pre = new System.Windows.Forms.TextBox();
             this.cmbresultado = new System.Windows.Forms.ComboBox();
             this.cmbrechazo = new System.Windows.Forms.ComboBox();
             this.Txtplano_dia = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.dtpproximo = new System.Windows.Forms.DateTimePicker();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.dtpcargue = new System.Windows.Forms.DateTimePicker();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.epError = new System.Windows.Forms.ErrorProvider(this.components);
             this.TxtCargues = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -116,6 +116,9 @@
             this.Btn_Guardar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btncopy_pagare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btncopy)).BeginInit();
@@ -136,10 +139,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox8);
+            this.groupBox2.Controls.Add(this.pictureBox7);
+            this.groupBox2.Controls.Add(this.pictureBox5);
             this.groupBox2.Controls.Add(this.btncopy_pagare);
             this.groupBox2.Controls.Add(this.Txtpagare);
             this.groupBox2.Controls.Add(this.Txtnit);
@@ -211,16 +220,6 @@
             this.Txtnit.Text = "860034133";
             this.Txtnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(558, 69);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(25, 17);
-            this.label34.TabIndex = 150;
-            this.label34.Text = "Nit";
-            // 
             // Btncopy
             // 
             this.Btncopy.BackColor = System.Drawing.SystemColors.Menu;
@@ -252,24 +251,14 @@
             this.Txttotal.BackColor = System.Drawing.SystemColors.Menu;
             this.Txttotal.Enabled = false;
             this.Txttotal.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txttotal.Location = new System.Drawing.Point(225, 65);
+            this.Txttotal.Location = new System.Drawing.Point(222, 65);
             this.Txttotal.MaxLength = 100;
             this.Txttotal.Multiline = true;
             this.Txttotal.Name = "Txttotal";
-            this.Txttotal.Size = new System.Drawing.Size(134, 26);
+            this.Txttotal.Size = new System.Drawing.Size(136, 26);
             this.Txttotal.TabIndex = 144;
             this.Txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txttotal.TextChanged += new System.EventHandler(this.Txttotal_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(183, 69);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(37, 17);
-            this.label12.TabIndex = 30;
-            this.label12.Text = "Total";
             // 
             // label11
             // 
@@ -321,23 +310,14 @@
             // 
             this.Txtplazo.BackColor = System.Drawing.SystemColors.Menu;
             this.Txtplazo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtplazo.Location = new System.Drawing.Point(739, 24);
+            this.Txtplazo.Location = new System.Drawing.Point(714, 24);
             this.Txtplazo.MaxLength = 10;
             this.Txtplazo.Multiline = true;
             this.Txtplazo.Name = "Txtplazo";
-            this.Txtplazo.Size = new System.Drawing.Size(68, 26);
+            this.Txtplazo.Size = new System.Drawing.Size(93, 26);
             this.Txtplazo.TabIndex = 10;
             this.Txtplazo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(685, 28);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 17);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Plazo";
+            this.Txtplazo.Validated += new System.EventHandler(this.Txtplazo_Validated);
             // 
             // Txtmonto
             // 
@@ -366,16 +346,6 @@
             this.Txtcuota.TextChanged += new System.EventHandler(this.Txtcuota_TextChanged);
             this.Txtcuota.Validated += new System.EventHandler(this.Txtcuota_Validated);
             // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(21, 69);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(42, 17);
-            this.label17.TabIndex = 17;
-            this.label17.Text = "Cuota";
-            // 
             // Txtscoring
             // 
             this.Txtscoring.BackColor = System.Drawing.SystemColors.Menu;
@@ -388,16 +358,6 @@
             this.Txtscoring.TabIndex = 6;
             this.Txtscoring.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtscoring.Validated += new System.EventHandler(this.Txtscoring_Validated);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(6, 29);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Scoring";
             // 
             // cmbfuerza
             // 
@@ -413,15 +373,15 @@
             this.cmbfuerza.Size = new System.Drawing.Size(134, 25);
             this.cmbfuerza.TabIndex = 8;
             // 
-            // label8
+            // label6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(470, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 17);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Monto";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 29);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Scoring";
             // 
             // label7
             // 
@@ -433,6 +393,46 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Fuerza venta";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(470, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 17);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Monto";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(673, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 17);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Plazo";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(21, 69);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(42, 17);
+            this.label17.TabIndex = 17;
+            this.label17.Text = "Cuota";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(183, 69);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(37, 17);
+            this.label12.TabIndex = 30;
+            this.label12.Text = "Total";
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -442,6 +442,16 @@
             this.label33.Size = new System.Drawing.Size(49, 17);
             this.label33.TabIndex = 152;
             this.label33.Text = "Pagare";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(558, 69);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(25, 17);
+            this.label34.TabIndex = 150;
+            this.label34.Text = "Nit";
             // 
             // Txtradicado
             // 
@@ -761,16 +771,6 @@
             this.label31.TabIndex = 54;
             this.label31.Text = "CC Funcionario";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(9, 164);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(82, 17);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "Comentarios";
-            // 
             // Txtcomentarios
             // 
             this.Txtcomentarios.BackColor = System.Drawing.SystemColors.Menu;
@@ -794,7 +794,6 @@
             this.Txtplano_pre.Size = new System.Drawing.Size(150, 25);
             this.Txtplano_pre.TabIndex = 177;
             this.Txtplano_pre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Txtplano_pre.TextChanged += new System.EventHandler(this.Txtplano_pre_TextChanged);
             // 
             // cmbresultado
             // 
@@ -809,7 +808,6 @@
             this.cmbresultado.Name = "cmbresultado";
             this.cmbresultado.Size = new System.Drawing.Size(148, 25);
             this.cmbresultado.TabIndex = 16;
-            this.cmbresultado.Validated += new System.EventHandler(this.cmbresultado_Validated);
             // 
             // cmbrechazo
             // 
@@ -834,16 +832,6 @@
             this.Txtplano_dia.TabIndex = 166;
             this.Txtplano_dia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(255, 71);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(112, 17);
-            this.label23.TabIndex = 24;
-            this.label23.Text = "Respuesta cargue";
-            // 
             // dtpproximo
             // 
             this.dtpproximo.CustomFormat = "";
@@ -853,26 +841,6 @@
             this.dtpproximo.Name = "dtpproximo";
             this.dtpproximo.Size = new System.Drawing.Size(111, 25);
             this.dtpproximo.TabIndex = 13;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(533, 71);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(99, 17);
-            this.label22.TabIndex = 23;
-            this.label22.Text = "Causal Rechazo";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(9, 71);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(94, 17);
-            this.label24.TabIndex = 30;
-            this.label24.Text = "Estado Cargue";
             // 
             // dtpcargue
             // 
@@ -886,6 +854,69 @@
             this.dtpcargue.Size = new System.Drawing.Size(111, 25);
             this.dtpcargue.TabIndex = 12;
             this.dtpcargue.ValueChanged += new System.EventHandler(this.dtpcargue_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(8, 31);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 17);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Fecha Cargue";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(227, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 17);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Proximo cargue";
+            // 
+            // label28
+            // 
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(460, 31);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(118, 17);
+            this.label28.TabIndex = 148;
+            this.label28.Text = "Fecha Desembolso";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(9, 71);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(94, 17);
+            this.label24.TabIndex = 30;
+            this.label24.Text = "Estado Cargue";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(255, 71);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(112, 17);
+            this.label23.TabIndex = 24;
+            this.label23.Text = "Respuesta cargue";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(533, 71);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(99, 17);
+            this.label22.TabIndex = 23;
+            this.label22.Text = "Causal Rechazo";
             // 
             // label15
             // 
@@ -907,38 +938,15 @@
             this.label19.TabIndex = 17;
             this.label19.Text = "Pre";
             // 
-            // label28
+            // label18
             // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(460, 31);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(118, 17);
-            this.label28.TabIndex = 148;
-            this.label28.Text = "Fecha Desembolso";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(227, 31);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 17);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Proximo cargue";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(8, 31);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 17);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Fecha Cargue";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(9, 164);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(82, 17);
+            this.label18.TabIndex = 29;
+            this.label18.Text = "Comentarios";
             // 
             // epError
             // 
@@ -999,7 +1007,6 @@
             this.BtnGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.BtnGuardar.TabIndex = 26;
             this.BtnGuardar.TabStop = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click_1);
             // 
             // pictureBox12
             // 
@@ -1047,8 +1054,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(352, 515);
             this.dataGridView1.TabIndex = 32;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // cmb_gestion
             // 
@@ -1176,6 +1181,44 @@
             this.label27.TabIndex = 47;
             this.label27.Text = "Estado";
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.pictureBox5.Location = new System.Drawing.Point(154, 65);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 154;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.SystemColors.Menu;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.pictureBox7.Location = new System.Drawing.Point(785, 25);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 155;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.SystemColors.Menu;
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.pictureBox8.Location = new System.Drawing.Point(338, 66);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 156;
+            this.pictureBox8.TabStop = false;
+            // 
             // FormGiros
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1229,6 +1272,9 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1321,5 +1367,8 @@
         private System.Windows.Forms.TextBox Txttotal_recaudo;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.PictureBox btncopy_pagare;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

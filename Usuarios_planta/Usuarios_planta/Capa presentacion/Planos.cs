@@ -19,23 +19,28 @@ namespace Usuarios_planta.Capa_presentacion
 
         public Planos()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
         private void btnnegados_Click(object sender, EventArgs e)
         {
             if (cmb_Gestion2.Text == "Negados")
             {
-                cmds.buscar_negados(dtp_proximo_cargue2, dataGridView1);
+                cmds.buscar_negados(dtp_cargue, dgvresultado);
+            }
+            else if (cmb_Gestion2.Text == "Pendiente Cargue")
+            {
+                cmds.pendiente_cargue(dtp_cargue, dgvresultado);
+
             }
             else if (cmb_Gestion2.Text == "Contabilizados")
             {
-                cmds.buscar_contabilizados(dtp_proximo_cargue2, dataGridView1);
+                cmds.buscar_contabilizados(dtp_cargue, dgvresultado);
 
             }
             else if (cmb_Gestion2.Text == "Pte Respuesta")
             {
-                cmds.pendiente_respuesta(dataGridView1);
+                cmds.pendiente_respuesta(dgvresultado);
             }
         }
 
@@ -64,14 +69,14 @@ namespace Usuarios_planta.Capa_presentacion
                     string sLine = "";
 
                     //Este bucle for recorre cada fila de la tabla
-                    for (int r = 0; r <= dataGridView1.Rows.Count - 1; r++)
+                    for (int r = 0; r <= dgvresultado.Rows.Count - 1; r++)
                     {
                         //Este bucle for recorre cada columna y el número de fila
                         //se pasa desde el bucle for arriba.
-                        for (int c = 0; c <= dataGridView1.Columns.Count - 1; c++)
+                        for (int c = 0; c <= dgvresultado.Columns.Count - 1; c++)
                         {
-                            sLine = sLine + dataGridView1.Rows[r].Cells[c].Value;
-                            if (c != dataGridView1.Columns.Count - 1)
+                            sLine = sLine + dgvresultado.Rows[r].Cells[c].Value;
+                            if (c != dgvresultado.Columns.Count - 1)
                             {
                                 // Una coma se agrega como delimitador de texto para
                                 //para separar cada campo en el archivo de texto.

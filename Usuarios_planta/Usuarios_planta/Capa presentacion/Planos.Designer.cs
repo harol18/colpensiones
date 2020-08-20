@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Txtnombre_plano = new System.Windows.Forms.TextBox();
             this.Btn_Crear_plano = new FontAwesome.Sharp.IconButton();
             this.ch_plano_baja = new System.Windows.Forms.CheckBox();
             this.ch_plano_alta = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtp_proximo_cargue2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_cargue = new System.Windows.Forms.DateTimePicker();
             this.TxtCod_funcionario = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cmb_Gestion2 = new System.Windows.Forms.ComboBox();
@@ -44,19 +46,17 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvresultado = new System.Windows.Forms.DataGridView();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Txtnombre_plano = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.lblfecha_plano = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnnegados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvresultado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,7 +72,7 @@
             this.panel3.Controls.Add(this.ch_plano_baja);
             this.panel3.Controls.Add(this.ch_plano_alta);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.dtp_proximo_cargue2);
+            this.panel3.Controls.Add(this.dtp_cargue);
             this.panel3.Controls.Add(this.TxtCod_funcionario);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.cmb_Gestion2);
@@ -83,6 +83,30 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(213, 373);
             this.panel3.TabIndex = 49;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(8, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 17);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "Plano";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Txtnombre_plano
+            // 
+            this.Txtnombre_plano.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Txtnombre_plano.BackColor = System.Drawing.SystemColors.Menu;
+            this.Txtnombre_plano.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtnombre_plano.Location = new System.Drawing.Point(5, 128);
+            this.Txtnombre_plano.Multiline = true;
+            this.Txtnombre_plano.Name = "Txtnombre_plano";
+            this.Txtnombre_plano.Size = new System.Drawing.Size(153, 24);
+            this.Txtnombre_plano.TabIndex = 60;
+            this.Txtnombre_plano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Btn_Crear_plano
             // 
@@ -136,22 +160,22 @@
             this.label2.Text = "Codigo Funcionario";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dtp_proximo_cargue2
+            // dtp_cargue
             // 
-            this.dtp_proximo_cargue2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtp_proximo_cargue2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_proximo_cargue2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_proximo_cargue2.Location = new System.Drawing.Point(10, 266);
-            this.dtp_proximo_cargue2.Name = "dtp_proximo_cargue2";
-            this.dtp_proximo_cargue2.Size = new System.Drawing.Size(108, 25);
-            this.dtp_proximo_cargue2.TabIndex = 55;
+            this.dtp_cargue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtp_cargue.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_cargue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_cargue.Location = new System.Drawing.Point(10, 266);
+            this.dtp_cargue.Name = "dtp_cargue";
+            this.dtp_cargue.Size = new System.Drawing.Size(108, 25);
+            this.dtp_cargue.TabIndex = 55;
             // 
             // TxtCod_funcionario
             // 
             this.TxtCod_funcionario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TxtCod_funcionario.BackColor = System.Drawing.SystemColors.Menu;
             this.TxtCod_funcionario.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCod_funcionario.Location = new System.Drawing.Point(3, 47);
+            this.TxtCod_funcionario.Location = new System.Drawing.Point(6, 47);
             this.TxtCod_funcionario.Multiline = true;
             this.TxtCod_funcionario.Name = "TxtCod_funcionario";
             this.TxtCod_funcionario.Size = new System.Drawing.Size(44, 24);
@@ -179,7 +203,8 @@
             this.cmb_Gestion2.Items.AddRange(new object[] {
             "Negados",
             "Contabilizados",
-            "Pte Respuesta"});
+            "Pte Respuesta",
+            "Pendiente Cargue"});
             this.cmb_Gestion2.Location = new System.Drawing.Point(5, 201);
             this.cmb_Gestion2.Name = "cmb_Gestion2";
             this.cmb_Gestion2.Size = new System.Drawing.Size(148, 25);
@@ -261,14 +286,14 @@
             this.pictureBox6.TabIndex = 50;
             this.pictureBox6.TabStop = false;
             // 
-            // dataGridView1
+            // dgvresultado
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(263, 123);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(937, 523);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvresultado.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvresultado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvresultado.Location = new System.Drawing.Point(263, 123);
+            this.dgvresultado.Name = "dgvresultado";
+            this.dgvresultado.Size = new System.Drawing.Size(937, 523);
+            this.dgvresultado.TabIndex = 5;
             // 
             // pictureBox3
             // 
@@ -297,30 +322,6 @@
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
             // 
-            // Txtnombre_plano
-            // 
-            this.Txtnombre_plano.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Txtnombre_plano.BackColor = System.Drawing.SystemColors.Menu;
-            this.Txtnombre_plano.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtnombre_plano.Location = new System.Drawing.Point(5, 128);
-            this.Txtnombre_plano.Multiline = true;
-            this.Txtnombre_plano.Name = "Txtnombre_plano";
-            this.Txtnombre_plano.Size = new System.Drawing.Size(153, 24);
-            this.Txtnombre_plano.TabIndex = 60;
-            this.Txtnombre_plano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(8, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 17);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "Plano";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // lblfecha_plano
             // 
             this.lblfecha_plano.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -347,7 +348,7 @@
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvresultado);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Planos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -359,7 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnnegados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvresultado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -381,8 +382,8 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox TxtCod_funcionario;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtp_proximo_cargue2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DateTimePicker dtp_cargue;
+        private System.Windows.Forms.DataGridView dgvresultado;
         private System.Windows.Forms.CheckBox ch_plano_baja;
         private System.Windows.Forms.CheckBox ch_plano_alta;
         private FontAwesome.Sharp.IconButton Btn_Crear_plano;

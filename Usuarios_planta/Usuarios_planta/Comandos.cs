@@ -23,9 +23,9 @@ namespace Usuarios_planta
 
         public void Insertar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
             TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota,
-            TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbresultado, ComboBox cmbrechazo, ComboBox Cmbestado,
-            DateTimePicker dtpcargue, DateTimePicker dtpproximo, DateTimePicker dtpfecha_desembolso, TextBox Txtplano_dia,
-            TextBox Txtplano_pre, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+            TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, DateTimePicker dtpcargue, DateTimePicker dtpproximo,
+            DateTimePicker dtpfecha_desembolso, ComboBox Cmbestado, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia, TextBox Txtplano_pre,
+            TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
             con.Open(); 
             MySqlCommand cmd = new MySqlCommand("insertar_colp", con);
@@ -53,12 +53,12 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Nit", Txtnit.Text);
                 cmd.Parameters.AddWithValue("@_Cuota_Letras", Txtcuota_letras.Text);
                 cmd.Parameters.AddWithValue("@_Total_Letras", Txttotal_letras.Text);
-                cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
-                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
-                cmd.Parameters.AddWithValue("@_Estado_Operacion", Cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_Cargue", dtpcargue.Text);
                 cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);
+                cmd.Parameters.AddWithValue("@_Estado_Operacion", Cmbestado.Text);
+                cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
+                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);   
                 cmd.Parameters.AddWithValue("@_Plano_Dia", Txtplano_dia.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Pre", Txtplano_pre.Text);
                 cmd.Parameters.AddWithValue("@_Comentarios", Txtcomentarios.Text);
@@ -95,11 +95,11 @@ namespace Usuarios_planta
             }
         }
 
-        public void actualizar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2, TextBox Txttotal_recaudo,
-                                    TextBox Txtscoring, ComboBox cmbfuerza, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota,
-                                    TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbresultado, ComboBox cmbrechazo, ComboBox Cmbestado,
-                                    DateTimePicker dtpcargue, DateTimePicker dtpproximo, DateTimePicker dtpfecha_desembolso, TextBox Txtplano_dia,
-                                    TextBox Txtplano_pre, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+        public void actualizar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
+                                    TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota,
+                                    TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, DateTimePicker dtpcargue, DateTimePicker dtpproximo,
+                                    DateTimePicker dtpfecha_desembolso, ComboBox Cmbestado, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia, TextBox Txtplano_pre,
+                                    TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
             con.Open();
             MySqlCommand cmd = new MySqlCommand("actualizar_colp", con);
@@ -123,15 +123,15 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Cuota", Txtcuota.Text);
                 cmd.Parameters.AddWithValue("@_Total", Txttotal.Text);
                 cmd.Parameters.AddWithValue("@_Pagare", Txtpagare.Text);
-                cmd.Parameters.AddWithValue("@_Nit",Txtnit.Text);
+                cmd.Parameters.AddWithValue("@_Nit", Txtnit.Text);
                 cmd.Parameters.AddWithValue("@_Cuota_Letras", Txtcuota_letras.Text);
                 cmd.Parameters.AddWithValue("@_Total_Letras", Txttotal_letras.Text);
-                cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
-                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
-                cmd.Parameters.AddWithValue("@_Estado_Operacion", Cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_Cargue", dtpcargue.Text);
                 cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);
+                cmd.Parameters.AddWithValue("@_Estado_Operacion", Cmbestado.Text);
+                cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
+                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Dia", Txtplano_dia.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Pre", Txtplano_pre.Text);
                 cmd.Parameters.AddWithValue("@_Comentarios", Txtcomentarios.Text);
@@ -168,11 +168,11 @@ namespace Usuarios_planta
             }
         }
 
-        public void buscar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2, TextBox Txttotal_recaudo,
-            TextBox Txtscoring, ComboBox cmbfuerza, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota,
-            TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbresultado, ComboBox cmbrechazo, ComboBox Cmbestado,
-            DateTimePicker dtpcargue, DateTimePicker dtpproximo, DateTimePicker dtpfecha_desembolso,  TextBox Txtplano_dia,
-            TextBox Txtplano_pre, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+        public void buscar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
+                                    TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota,
+                                    TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, DateTimePicker dtpcargue, DateTimePicker dtpproximo,
+                                    DateTimePicker dtpfecha_desembolso, ComboBox Cmbestado, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia, TextBox Txtplano_pre,
+                                    TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
             
             try
@@ -201,12 +201,12 @@ namespace Usuarios_planta
                     Txtnit.Text = registro["Nit"].ToString();
                     Txtcuota_letras.Text = registro["Cuota_Letras"].ToString();
                     Txttotal_letras.Text = registro["Total_Letras"].ToString();
-                    cmbresultado.Text = registro["Respuesta_Cargue"].ToString();
-                    cmbrechazo.Text = registro["Causal_Rechazo"].ToString();
-                    Cmbestado.Text = registro["Estado_Operacion"].ToString();
                     dtpcargue.Text = registro["Fecha_Cargue"].ToString();
                     dtpproximo.Text = registro["Proximo_Cargue"].ToString();
                     dtpfecha_desembolso.Text = registro["Fecha_desembolso"].ToString();
+                    Cmbestado.Text = registro["Estado_Operacion"].ToString();
+                    cmbresultado.Text = registro["Respuesta_Cargue"].ToString();
+                    cmbrechazo.Text = registro["Causal_Rechazo"].ToString();
                     Txtplano_dia.Text = registro["Plano_Dia"].ToString();
                     Txtplano_pre.Text = registro["Plano_Pre"].ToString();
                     Txtcomentarios.Text = registro["Comentarios"].ToString();
@@ -259,10 +259,10 @@ namespace Usuarios_planta
         }
 
         public void historico_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
-            TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, TextBox Txtmonto, TextBox Txtplazo,TextBox Txtcuota,
-            TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbresultado, ComboBox cmbrechazo, ComboBox Cmbestado,
-            DateTimePicker dtpcargue, DateTimePicker dtpproximo, DateTimePicker dtpfecha_desembolso, TextBox Txtplano_dia,
-            TextBox Txtplano_pre, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+                                    TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota,
+                                    TextBox Txttotal, TextBox Txtpagare, TextBox Txtnit, TextBox Txtcuota_letras, TextBox Txttotal_letras, DateTimePicker dtpcargue, DateTimePicker dtpproximo,
+                                    DateTimePicker dtpfecha_desembolso, ComboBox Cmbestado, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia, TextBox Txtplano_pre,
+                                    TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
 
             con.Open();
@@ -289,17 +289,16 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Nit", Txtnit.Text);
                 cmd.Parameters.AddWithValue("@_Cuota_Letras", Txtcuota_letras.Text);
                 cmd.Parameters.AddWithValue("@_Total_Letras", Txttotal_letras.Text);
-                cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
-                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
-                cmd.Parameters.AddWithValue("@_Estado_Operacion", Cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_Cargue", dtpcargue.Text);
                 cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);
+                cmd.Parameters.AddWithValue("@_Estado_Operacion", Cmbestado.Text);
+                cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
+                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Dia", Txtplano_dia.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Pre", Txtplano_pre.Text);
                 cmd.Parameters.AddWithValue("@_Comentarios", Txtcomentarios.Text);
                 cmd.Parameters.AddWithValue("@_Id_Funcionario", TxtIDfuncionario.Text);
-                cmd.Parameters.AddWithValue("@_Nombre_Funcionario", TxtNomFuncionario.Text);
                 cmd.Parameters.AddWithValue("@_Nombre_Funcionario", TxtNomFuncionario.Text);
                 cmd.ExecuteNonQuery();
                 myTrans.Commit();
@@ -438,6 +437,31 @@ namespace Usuarios_planta
 
             }
         }
+
+        public void pendiente_cargue(DateTimePicker dtp_cargue, DataGridView dgvresultado)
+        {
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                MySqlCommand cmd = new MySqlCommand("pendiente_cargue", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_Fecha_Cargue", dtp_cargue.Text);
+                MySqlDataAdapter registro = new MySqlDataAdapter(cmd);
+                registro.Fill(dt);
+                dgvresultado.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No hay operaciones desembolsadas para cargar el dia seleccionado", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
         public void pendiente_respuesta(DataGridView dataGridView1)
         {
             try
