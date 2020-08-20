@@ -1,0 +1,9 @@
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\bin\Release\netstandard2.0\NEGOCIO.deps.json
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\bin\Release\netstandard2.0\NEGOCIO.dll
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\bin\Release\netstandard2.0\NEGOCIO.pdb
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\obj\Release\netstandard2.0\NEGOCIO.csprojAssemblyReference.cache
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\obj\Release\netstandard2.0\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\obj\Release\netstandard2.0\NEGOCIO.AssemblyInfoInputs.cache
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\obj\Release\netstandard2.0\NEGOCIO.AssemblyInfo.cs
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\obj\Release\netstandard2.0\NEGOCIO.dll
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\NEGOCIO\obj\Release\netstandard2.0\NEGOCIO.pdb

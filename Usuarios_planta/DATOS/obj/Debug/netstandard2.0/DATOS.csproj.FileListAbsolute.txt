@@ -1,0 +1,9 @@
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\bin\Debug\netstandard2.0\DATOS.deps.json
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\bin\Debug\netstandard2.0\DATOS.dll
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\bin\Debug\netstandard2.0\DATOS.pdb
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\obj\Debug\netstandard2.0\DATOS.csprojAssemblyReference.cache
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\obj\Debug\netstandard2.0\DATOS.csproj.CoreCompileInputs.cache
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\obj\Debug\netstandard2.0\DATOS.AssemblyInfoInputs.cache
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\obj\Debug\netstandard2.0\DATOS.AssemblyInfo.cs
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\obj\Debug\netstandard2.0\DATOS.dll
+C:\Users\BBVA\Desktop\Proyectos\Desembolso\Usuarios_planta\DATOS\obj\Debug\netstandard2.0\DATOS.pdb
