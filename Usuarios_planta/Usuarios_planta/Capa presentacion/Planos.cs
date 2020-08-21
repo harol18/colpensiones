@@ -57,13 +57,14 @@ namespace Usuarios_planta.Capa_presentacion
 
         DateTime fecha = DateTime.Now;
         
+        
 
         private void Btn_Crear_plano_Click(object sender, EventArgs e)
         {
             if (ch_plano_alta.Checked)
             {
                 //Esta línea de código crea un archivo de texto para la exportación de datos.
-                StreamWriter file = new StreamWriter(@"C:\\Users\\bbva\\Desktop\\Colpensiones\\prueba.txt");
+                StreamWriter file = new StreamWriter(@"C:\\Users\\bbva\\Desktop\\Colpensiones\\"+ Txtnombre_plano.Text+".txt");
                 try
                 {
                     string sLine = "";
@@ -113,9 +114,16 @@ namespace Usuarios_planta.Capa_presentacion
 
         }
 
+       
+
         private void TxtCod_funcionario_TextChanged(object sender, EventArgs e)
         {
-            Txtnombre_plano.Text = "PR_00860034133_" + lblfecha_plano.Text;
+            String sCadena = dtphoy.Text;
+            String año = sCadena.Substring(6, 4);
+            String mes = sCadena.Substring(3, 2);
+            String dia = sCadena.Substring(0, 2);
+
+            Txtnombre_plano.Text = "PR_00860034133_"+año+mes+dia+TxtCod_funcionario.Text;
         }
     }
 }

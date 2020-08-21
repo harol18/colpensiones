@@ -254,16 +254,6 @@ namespace Usuarios_planta.Formularios
             string largo = Txtcuota.Text;
             string length = Convert.ToString(largo.Length);
 
-            //if (Convert.ToDouble(Txtcuota.Text) > 0)
-            //{
-            //    Txtcuota.Text = string.Format("{0:#,##0}", double.Parse(Txtcuota.Text));
-
-            //}
-            //else if (Txtcuota.Text == "")
-            //{
-            //    Txtcuota.Text = Convert.ToString(0);
-            //}
-
             Txttotal.Text = (double.Parse(Txtcuota.Text) * double.Parse(Txtplazo.Text)).ToString();
 
             if (Convert.ToDouble(Txttotal.Text) > 0)
@@ -298,19 +288,6 @@ namespace Usuarios_planta.Formularios
             }
 
 
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            if (cmb_gestion.Text == "Negados")
-            {
-                cmds.buscar_negados(dtpfecha, dataGridView1);
-            }
-            else if (cmb_gestion.Text == "Contabilizados")
-            {
-                cmds.buscar_contabilizados(dtpfecha, dataGridView1);
-
-            }
         }
 
         private void TxtEstado_cliente_TextChanged(object sender, EventArgs e)

@@ -341,4 +341,3 @@ C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Colpensiones\Usuarios_planta\Usuario
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Colpensiones\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.csproj.CopyComplete
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Colpensiones\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.exe
 C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Colpensiones\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.pdb
-C:\Users\BBVA\Desktop\Desarrollo c# fabrica\Colpensiones\Usuarios_planta\Usuarios_planta\obj\Release\Usuarios_planta.csprojAssemblyReference.cache

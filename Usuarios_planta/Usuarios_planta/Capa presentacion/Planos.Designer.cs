@@ -50,7 +50,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblfecha_plano = new System.Windows.Forms.Label();
+            this.dtphoy = new System.Windows.Forms.DateTimePicker();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnnegados)).BeginInit();
@@ -66,6 +66,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.dtphoy);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.Txtnombre_plano);
             this.panel3.Controls.Add(this.Btn_Crear_plano);
@@ -81,12 +82,11 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(11, 123);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(213, 373);
+            this.panel3.Size = new System.Drawing.Size(246, 373);
             this.panel3.TabIndex = 49;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(8, 108);
@@ -98,13 +98,12 @@
             // 
             // Txtnombre_plano
             // 
-            this.Txtnombre_plano.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Txtnombre_plano.BackColor = System.Drawing.SystemColors.Menu;
             this.Txtnombre_plano.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtnombre_plano.Location = new System.Drawing.Point(5, 128);
+            this.Txtnombre_plano.Location = new System.Drawing.Point(6, 128);
             this.Txtnombre_plano.Multiline = true;
             this.Txtnombre_plano.Name = "Txtnombre_plano";
-            this.Txtnombre_plano.Size = new System.Drawing.Size(153, 24);
+            this.Txtnombre_plano.Size = new System.Drawing.Size(235, 24);
             this.Txtnombre_plano.TabIndex = 60;
             this.Txtnombre_plano.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -150,10 +149,9 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 27);
+            this.label2.Location = new System.Drawing.Point(7, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 17);
             this.label2.TabIndex = 54;
@@ -172,10 +170,9 @@
             // 
             // TxtCod_funcionario
             // 
-            this.TxtCod_funcionario.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.TxtCod_funcionario.BackColor = System.Drawing.SystemColors.Menu;
             this.TxtCod_funcionario.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtCod_funcionario.Location = new System.Drawing.Point(6, 47);
+            this.TxtCod_funcionario.Location = new System.Drawing.Point(7, 47);
             this.TxtCod_funcionario.Multiline = true;
             this.TxtCod_funcionario.Name = "TxtCod_funcionario";
             this.TxtCod_funcionario.Size = new System.Drawing.Size(44, 24);
@@ -217,7 +214,7 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(212, 24);
+            this.panel4.Size = new System.Drawing.Size(241, 24);
             this.panel4.TabIndex = 0;
             // 
             // label4
@@ -322,17 +319,16 @@
             this.pictureBox1.TabIndex = 57;
             this.pictureBox1.TabStop = false;
             // 
-            // lblfecha_plano
+            // dtphoy
             // 
-            this.lblfecha_plano.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblfecha_plano.AutoSize = true;
-            this.lblfecha_plano.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblfecha_plano.Location = new System.Drawing.Point(146, 85);
-            this.lblfecha_plano.Name = "lblfecha_plano";
-            this.lblfecha_plano.Size = new System.Drawing.Size(140, 17);
-            this.lblfecha_plano.TabIndex = 60;
-            this.lblfecha_plano.Text = "Codigo Funcionario";
-            this.lblfecha_plano.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.dtphoy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtphoy.Enabled = false;
+            this.dtphoy.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtphoy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtphoy.Location = new System.Drawing.Point(57, 47);
+            this.dtphoy.Name = "dtphoy";
+            this.dtphoy.Size = new System.Drawing.Size(108, 25);
+            this.dtphoy.TabIndex = 62;
             // 
             // Planos
             // 
@@ -340,7 +336,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1212, 788);
-            this.Controls.Add(this.lblfecha_plano);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -392,6 +387,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox Txtnombre_plano;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblfecha_plano;
+        private System.Windows.Forms.DateTimePicker dtphoy;
     }
 }
