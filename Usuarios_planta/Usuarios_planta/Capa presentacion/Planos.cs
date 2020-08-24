@@ -14,7 +14,8 @@ namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Planos : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=UserApp;password=Indra2020;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        //MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
         Comandos cmds = new Comandos();
 
         public Planos()
@@ -64,7 +65,7 @@ namespace Usuarios_planta.Capa_presentacion
             if (ch_plano_alta.Checked)
             {
                 //Esta línea de código crea un archivo de texto para la exportación de datos.
-                StreamWriter file = new StreamWriter(@"C:\\Users\\bbva\\Desktop\\Colpensiones\\"+ Txtnombre_plano.Text+".txt");
+                StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtnombre_plano.Text+".txt");
                 try
                 {
                     string sLine = "";

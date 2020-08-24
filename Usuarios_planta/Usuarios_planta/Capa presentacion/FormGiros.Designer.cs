@@ -280,7 +280,7 @@
             this.Btncopy.BackColor = System.Drawing.SystemColors.Menu;
             this.Btncopy.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btncopy.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.Btncopy.Location = new System.Drawing.Point(540, 171);
+            this.Btncopy.Location = new System.Drawing.Point(638, 171);
             this.Btncopy.Name = "Btncopy";
             this.Btncopy.Size = new System.Drawing.Size(20, 24);
             this.Btncopy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -293,7 +293,7 @@
             this.Btncopy1.BackColor = System.Drawing.SystemColors.Menu;
             this.Btncopy1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btncopy1.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.Btncopy1.Location = new System.Drawing.Point(539, 133);
+            this.Btncopy1.Location = new System.Drawing.Point(638, 133);
             this.Btncopy1.Name = "Btncopy1";
             this.Btncopy1.Size = new System.Drawing.Size(20, 24);
             this.Btncopy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -334,7 +334,7 @@
             this.Txttotal_letras.MaxLength = 100;
             this.Txttotal_letras.Multiline = true;
             this.Txttotal_letras.Name = "Txttotal_letras";
-            this.Txttotal_letras.Size = new System.Drawing.Size(465, 26);
+            this.Txttotal_letras.Size = new System.Drawing.Size(564, 26);
             this.Txttotal_letras.TabIndex = 27;
             this.Txttotal_letras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -357,7 +357,7 @@
             this.Txtcuota_letras.MaxLength = 100;
             this.Txtcuota_letras.Multiline = true;
             this.Txtcuota_letras.Name = "Txtcuota_letras";
-            this.Txtcuota_letras.Size = new System.Drawing.Size(465, 26);
+            this.Txtcuota_letras.Size = new System.Drawing.Size(564, 26);
             this.Txtcuota_letras.TabIndex = 25;
             this.Txtcuota_letras.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

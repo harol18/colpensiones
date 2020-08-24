@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using SpreadsheetLight;
-using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;   
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -18,7 +18,8 @@ namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Cargue_archivos : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=UserApp;password=Indra2020;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        //MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
 
         public Cargue_archivos()
         {
@@ -44,7 +45,6 @@ namespace Usuarios_planta.Capa_presentacion
                         {   //Mientras haya mas archivo, leemos mas
 
                             string[] fields = line.Split('|'); // Dividimos la linea por el caracter
-                            //Console.WriteLine(fields[0]);
                             con.Open();
                             MySqlCommand cmd = con.CreateCommand();
                             cmd.CommandText = "INSERT INTO FALLECIDOS_COLP (Afiliacion,Cedula,Nombre,Mes,Cuota,Nit,Entidad,Estado_cliente) value ";
@@ -118,7 +118,7 @@ namespace Usuarios_planta.Capa_presentacion
             {
                 con.Open();
                 MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO CONTABILIZADOS_COLP(Fecha_corte,Convenio,Nombre_Convenio,Consecutivo,Scoring,Nombre_cliente,Cedula,Fecha_desembolso,Importe," +
+                cmd.CommandText = "INSERT INTO contabilizados_colp(Fecha_corte,Convenio,Nombre_Convenio,Consecutivo,Scoring,Nombre_cliente,Cedula,Fecha_desembolso,Importe," +
                     "Plazo,TasaE_A,TasaN_M,Cuota,Estado,Marcacion_retanqueo) values (@Fecha_corte,@Convenio,@Nombre_Convenio,@Consecutivo,@Scoring,@Nombre_cliente,@Cedula,@Fecha_desembolso,@Importe," +
                     "@Plazo,@TasaE_A,@TasaN_M,@Cuota,@Estado,@Marcacion_retanqueo)";
                 

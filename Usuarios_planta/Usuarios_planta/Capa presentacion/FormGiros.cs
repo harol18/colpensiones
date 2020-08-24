@@ -22,7 +22,8 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormGiros : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        //MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
         Comandos cmds = new Comandos();
         Conversion c = new Conversion();
               
@@ -146,10 +147,11 @@ namespace Usuarios_planta.Formularios
         private void Btnbuscar_Click(object sender, EventArgs e)
         {
 
-            cmds.buscar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2, Txttotal_recaudo, Txtscoring,
-                             cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare, Txtnit, Txtentidad,Txtcuota_letras, Txttotal_letras, dtpcargue,
-                             dtpproximo, dtpfecha_desembolso, cmbestado,cmbcargue, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre, Txtcomentarios,
-                             TxtIDfuncionario, TxtNomFuncionario);
+            cmds.buscar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
+                             Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                             Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
+                             dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
+                             Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
             cmds.cargues_cliente(Txtcedula, TxtCargues);
 
@@ -332,15 +334,17 @@ namespace Usuarios_planta.Formularios
             BorrarMensajeError();
             if (validar())
             {
-                cmds.Insertar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2, Txttotal_recaudo, Txtscoring,
-                                   cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare, Txtnit, Txtentidad,Txtcuota_letras, Txttotal_letras, dtpcargue,
-                                   dtpproximo, dtpfecha_desembolso, cmbestado, cmbcargue, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre, Txtcomentarios,
-                                   TxtIDfuncionario, TxtNomFuncionario);
+                cmds.Insertar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
+                                   Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                   Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
+                                   dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
+                                   Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
-                cmds.historico_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2, Txttotal_recaudo, Txtscoring,
-                                   cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare, Txtnit, Txtentidad,Txtcuota_letras, Txttotal_letras, dtpcargue,
-                                   dtpproximo, dtpfecha_desembolso, cmbestado, cmbcargue, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre, Txtcomentarios,
-                                   TxtIDfuncionario, TxtNomFuncionario);
+                cmds.historico_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
+                                    Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                    Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
+                                    dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
+                                    Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
                 Btnactualizar.Enabled = true;
                 BtnGuardar.Enabled = true;
@@ -352,15 +356,17 @@ namespace Usuarios_planta.Formularios
             BorrarMensajeError();
             if (validar())
             {
-                cmds.actualizar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2, Txttotal_recaudo, Txtscoring,
-                                     cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare, Txtnit, Txtentidad,Txtcuota_letras, Txttotal_letras, dtpcargue,
-                                     dtpproximo, dtpfecha_desembolso, cmbestado, cmbcargue, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre, Txtcomentarios,
-                                     TxtIDfuncionario, TxtNomFuncionario);
+                cmds.actualizar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
+                                    Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                    Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
+                                    dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
+                                    Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
-                cmds.historico_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2, Txttotal_recaudo, Txtscoring,
-                                   cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare, Txtnit, Txtentidad,Txtcuota_letras, Txttotal_letras, dtpcargue,
-                                   dtpproximo, dtpfecha_desembolso, cmbestado, cmbcargue, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre, Txtcomentarios,
-                                   TxtIDfuncionario, TxtNomFuncionario);
+                cmds.historico_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
+                                    Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                    Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
+                                    dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
+                                    Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
                 Btnactualizar.Enabled = true;
                 BtnGuardar.Enabled = true;
