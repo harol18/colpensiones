@@ -16,8 +16,8 @@ namespace Usuarios_planta
 {
     class Comandos
     {
-        //MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        //MySqlConnection con = new MySqlConnection("server=82.2.121.99;Uid=userapp;password=userapp;database=dblibranza;port=3306;persistsecurityinfo=True;");
 
 
 
@@ -422,18 +422,42 @@ namespace Usuarios_planta
         }
 
 
-        public void buscar_contabilizados(DateTimePicker dtpfecha, DataGridView dataGridView2)
+        public void contabilizados_altas(DateTimePicker dtp_cargue, DataGridView dgv_altas)
         {
             try
             {
                 con.Open();
                 DataTable dt = new DataTable();
-                MySqlCommand cmd = new MySqlCommand("buscar_contabilizados", con);
+                MySqlCommand cmd = new MySqlCommand("contabilizados_altas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha.Text);
+                cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtp_cargue.Text);
                 MySqlDataAdapter registro = new MySqlDataAdapter(cmd);
                 registro.Fill(dt);
-                dataGridView2.DataSource = dt;
+                dgv_altas.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No hay operaciones desembolsadas para cargar el dia seleccionado", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
+        public void contabilizados_bajas(DateTimePicker dtp_cargue, DataGridView dgv_bajas)
+        {
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                MySqlCommand cmd = new MySqlCommand("contabilizados_bajas", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtp_cargue.Text);
+                MySqlDataAdapter registro = new MySqlDataAdapter(cmd);
+                registro.Fill(dt);
+                dgv_bajas.DataSource = dt;
                 con.Close();
             }
             catch (Exception ex)

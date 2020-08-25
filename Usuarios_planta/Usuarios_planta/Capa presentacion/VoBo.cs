@@ -160,14 +160,15 @@ namespace Usuarios_planta
 
         private void Btncklb_Click(object sender, EventArgs e)
         {
+            this.Hide();
             Form formulario = new FormGiros();
             formulario.Show();
         }
 
         private void Btndia_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new FormGiros());
-            hideSubMenu();
+            ////AbrirFormHijo(new FormGiros());
+            ////hideSubMenu();
         }
 
         private void BtnInformes_colp_Click(object sender, EventArgs e)

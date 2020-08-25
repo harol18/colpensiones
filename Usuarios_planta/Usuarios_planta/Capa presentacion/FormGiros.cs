@@ -16,21 +16,57 @@ using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using DocumentFormat.OpenXml.Spreadsheet;
 using System.Globalization;
-
+using Color = System.Drawing.Color;
 
 namespace Usuarios_planta.Formularios
 {
     public partial class FormGiros : Form
     {
-        //MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        //MySqlConnection con = new MySqlConnection("server=82.2.121.99;Uid=userapp;password=userapp;database=dblibranza;port=3306;persistsecurityinfo=True;");
         Comandos cmds = new Comandos();
         Conversion c = new Conversion();
-              
+        private Button currentBtn;
+        
+
 
         public FormGiros()
         {
             InitializeComponent();
+        }
+
+        private struct RGBColors
+        {
+            public static Color color1 = Color.FromArgb(251, 187, 33);
+            public static Color color2 = Color.FromArgb(52, 179, 29);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(53, 41, 237);
+        }
+
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisableButton();
+                //Button
+                currentBtn = (Button)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = Color.FromArgb(215,219,222);
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                
+            }
+        }
+
+        private void DisableButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(0, 66, 84);
+                currentBtn.ForeColor = Color.Gainsboro;
+                //currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                //currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                //currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            }
         }
 
         DateTime thisDay = DateTime.Today;
@@ -54,8 +90,8 @@ namespace Usuarios_planta.Formularios
             cmbrechazo.Text = "";
             cmbresultado.Text = "";
             cmbcargue.Text = "";
-            Btnactualizar.Enabled = true;
-            BtnGuardar.Enabled = true;
+            Btn_Actualizar.Enabled = true;
+            Btn_Guardar.Enabled = true;
 
         }
 
@@ -346,8 +382,8 @@ namespace Usuarios_planta.Formularios
                                     dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
                                     Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
-                Btnactualizar.Enabled = true;
-                BtnGuardar.Enabled = true;
+                Btn_Actualizar.Enabled = true;
+                Btn_Guardar.Enabled = true;
             }
         }
 
@@ -368,13 +404,14 @@ namespace Usuarios_planta.Formularios
                                     dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
                                     Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
-                Btnactualizar.Enabled = true;
-                BtnGuardar.Enabled = true;
+                Btn_Actualizar.Enabled = true;
+                Btn_Guardar.Enabled = true;
             }
         }
 
         private void Btn_Nuevo_Click(object sender, EventArgs e)
         {
+
             this.Close();
             Form formulario = new FormGiros();
             formulario.Show();
@@ -413,6 +450,33 @@ namespace Usuarios_planta.Formularios
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             Clipboard.SetDataObject(Txtplazo.Text, true);
+        }
+
+        private void Btn_Guardar_MouseHover(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+        }
+
+        private void Btn_Actualizar_MouseHover(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+        }
+
+        private void Btn_Nuevo_MouseHover(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color3);
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color4);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form formulario = new VoBo();
+            formulario.Show();
         }
     }
 }

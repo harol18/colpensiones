@@ -32,7 +32,7 @@ namespace Usuarios_planta.Formularios
             }
             else if (cmb_Gestion.Text == "Contabilizados")
             {
-                cmds.buscar_contabilizados(dtpfecha, dataGridView2);
+                cmds.contabilizados_altas(dtpfecha, dataGridView2);
 
             }
             else if (cmb_Gestion.Text == "Pte Respuesta")

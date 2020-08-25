@@ -14,8 +14,8 @@ namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Planos : Form
     {
-        //MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        //MySqlConnection con = new MySqlConnection("server=82.2.121.99;Uid=userapp;password=userapp;database=dblibranza;port=3306;persistsecurityinfo=True;");
         Comandos cmds = new Comandos();
 
         public Planos()
@@ -23,27 +23,6 @@ namespace Usuarios_planta.Capa_presentacion
             InitializeComponent(); 
         }
 
-        private void btnnegados_Click(object sender, EventArgs e)
-        {
-            if (cmb_Gestion2.Text == "Negados")
-            {
-                cmds.buscar_negados(dtp_cargue, dgvresultado);
-            }
-            else if (cmb_Gestion2.Text == "Pendiente Cargue")
-            {
-                cmds.pendiente_cargue(dtp_cargue, dgvresultado);
-
-            }
-            else if (cmb_Gestion2.Text == "Contabilizados")
-            {
-                cmds.buscar_contabilizados(dtp_cargue, dgvresultado);
-
-            }
-            else if (cmb_Gestion2.Text == "Pte Respuesta")
-            {
-                cmds.pendiente_respuesta(dgvresultado);
-            }
-        }
 
         private void ch_plano_alta_CheckedChanged(object sender, EventArgs e)
         {
@@ -65,20 +44,20 @@ namespace Usuarios_planta.Capa_presentacion
             if (ch_plano_alta.Checked)
             {
                 //Esta línea de código crea un archivo de texto para la exportación de datos.
-                StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtnombre_plano.Text+".txt");
+                StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_alta.Text+".txt");
                 try
                 {
                     string sLine = "";
 
                     //Este bucle for recorre cada fila de la tabla
-                    for (int r = 0; r <= dgvresultado.Rows.Count - 1; r++)
+                    for (int r = 0; r <= dgv_altas.Rows.Count - 1; r++)
                     {
                         //Este bucle for recorre cada columna y el número de fila
                         //se pasa desde el bucle for arriba.
-                        for (int c = 0; c <= dgvresultado.Columns.Count - 1; c++)
+                        for (int c = 0; c <= dgv_altas.Columns.Count - 1; c++)
                         {
-                            sLine = sLine + dgvresultado.Rows[r].Cells[c].Value;
-                            if (c != dgvresultado.Columns.Count - 1)
+                            sLine = sLine + dgv_altas.Rows[r].Cells[c].Value;
+                            if (c != dgv_altas.Columns.Count - 1)
                             {
                                 // Una coma se agrega como delimitador de texto para
                                 //para separar cada campo en el archivo de texto.
@@ -102,20 +81,48 @@ namespace Usuarios_planta.Capa_presentacion
             }
             else if (ch_plano_baja.Checked)
             {
-                MessageBox.Show("lady todo mal");
+                //Esta línea de código crea un archivo de texto para la exportación de datos.
+                StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_baja.Text + ".txt");
+                try
+                {
+                    string sLine = "";
+
+                    //Este bucle for recorre cada fila de la tabla
+                    for (int r = 0; r <= dgv_bajas.Rows.Count - 1; r++)
+                    {
+                        //Este bucle for recorre cada columna y el número de fila
+                        //se pasa desde el bucle for arriba.
+                        for (int c = 0; c <= dgv_altas.Columns.Count - 1; c++)
+                        {
+                            sLine = sLine + dgv_bajas.Rows[r].Cells[c].Value;
+                            if (c != dgv_bajas.Columns.Count - 1)
+                            {
+                                // Una coma se agrega como delimitador de texto para
+                                //para separar cada campo en el archivo de texto.
+                                //Puede elegir otro carácter como delimitador.
+                                sLine = sLine + "";
+                            }
+                        }
+                        //El texto exportado se escribe en el archivo de texto, una línea a la vez.
+                        file.WriteLine(sLine);
+                        sLine = "";
+                    }
+
+                    file.Close();
+                    MessageBox.Show("Ok archivo txt creado.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    file.Close();
+                }
             }
             else
             {
                 MessageBox.Show("Debe seleccionar que plano va a crear");
             }
         }
-
-        private void Btn_crear_Click(object sender, EventArgs e)
-        {
-
-        }
-
-       
+      
 
         private void TxtCod_funcionario_TextChanged(object sender, EventArgs e)
         {
@@ -124,7 +131,37 @@ namespace Usuarios_planta.Capa_presentacion
             String mes = sCadena.Substring(3, 2);
             String dia = sCadena.Substring(0, 2);
 
-            Txtnombre_plano.Text = "PR_00860034133_"+año+mes+dia+TxtCod_funcionario.Text;
+            Txtplano_alta.Text = "PR_00860034133_"+año+mes+dia+TxtCod_plano.Text;
+            Txtplano_baja.Text = "RP_00860034133_" + año + mes + dia + TxtCod_plano.Text;
+        }
+
+        private void btn_Validar_Click(object sender, EventArgs e)
+        {
+            if (cmb_Gestion2.Text == "Negados")
+            {
+                cmds.buscar_negados(dtp_cargue, dgv_altas);
+            }
+            else if (cmb_Gestion2.Text == "Pendiente Cargue")
+            {
+                cmds.pendiente_cargue(dtp_cargue, dgv_altas);
+
+            }
+            else if (cmb_Gestion2.Text == "Contabilizados")
+            {
+                cmds.contabilizados_altas(dtp_cargue, dgv_altas);
+                cmds.contabilizados_bajas(dtp_cargue, dgv_bajas);
+
+            }
+            else if (cmb_Gestion2.Text == "Pte Respuesta")
+            {
+                cmds.pendiente_respuesta(dgv_altas);
+            }
+        }
+
+        private void Btncopy1_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetDataObject(
+                this.dgv_altas.GetClipboardContent());
         }
     }
 }

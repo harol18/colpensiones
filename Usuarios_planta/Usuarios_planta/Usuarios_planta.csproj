@@ -122,6 +122,7 @@
     <Compile Include="Comandos.cs" />
     <Compile Include="Conversion.cs" />
     <Compile Include="limpiar.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capa presentacion\Cargue_archivos.resx">
@@ -335,6 +336,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus_math_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_50px1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
+
+
 namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Login : Form
