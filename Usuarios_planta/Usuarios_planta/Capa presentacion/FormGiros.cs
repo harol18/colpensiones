@@ -22,8 +22,8 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormGiros : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        //MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        
         Comandos cmds = new Comandos();
         Conversion c = new Conversion();
         private Button currentBtn;
@@ -63,9 +63,6 @@ namespace Usuarios_planta.Formularios
             {
                 currentBtn.BackColor = Color.FromArgb(0, 66, 84);
                 currentBtn.ForeColor = Color.Gainsboro;
-                //currentBtn.TextAlign = ContentAlignment.MiddleLeft;
-                //currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
-                //currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
 
@@ -184,7 +181,7 @@ namespace Usuarios_planta.Formularios
         {
 
             cmds.buscar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
-                             Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                             Txttotal_recaudo, Txtscoring, cmbfuerza, cmbdestino, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
                              Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
                              dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
                              Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
@@ -289,8 +286,8 @@ namespace Usuarios_planta.Formularios
 
         private void Txtcuota_Validated(object sender, EventArgs e)
         {
-            string largo = Txtcuota.Text;
-            string length = Convert.ToString(largo.Length);
+            //string largo = Txtcuota.Text;
+            //string length = Convert.ToString(largo.Length);
 
             Txttotal.Text = (double.Parse(Txtcuota.Text) * double.Parse(Txtplazo.Text)).ToString();
 
@@ -304,28 +301,26 @@ namespace Usuarios_planta.Formularios
                 Txttotal.Text = Convert.ToString(0);
             }
 
-            if (length == "3")
-            {
-                Txtcuota.Text = "00000" + Txtcuota.Text;
-            }
-            else if (length == "4")
-            {
-                Txtcuota.Text = "0000" + Txtcuota.Text;
-            }
-            else if (length == "5")
-            {
-                Txtcuota.Text = "000" + Txtcuota.Text;
-            }
-            else if (length == "6")
-            {
-                Txtcuota.Text = "00" + Txtcuota.Text;
-            }
-            else if (length == "7")
-            {
-                Txtcuota.Text = "0" + Txtcuota.Text;
-            }
-
-
+            //if (length == "3")
+            //{
+            //    Txtcuota.Text = "00000" + Txtcuota.Text;
+            //}
+            //else if (length == "4")
+            //{
+            //    Txtcuota.Text = "0000" + Txtcuota.Text;
+            //}
+            //else if (length == "5")
+            //{
+            //    Txtcuota.Text = "000" + Txtcuota.Text;
+            //}
+            //else if (length == "6")
+            //{
+            //    Txtcuota.Text = "00" + Txtcuota.Text;
+            //}
+            //else if (length == "7")
+            //{
+            //    Txtcuota.Text = "0" + Txtcuota.Text;
+            //}
         }
 
         private void TxtEstado_cliente_TextChanged(object sender, EventArgs e)
@@ -340,29 +335,29 @@ namespace Usuarios_planta.Formularios
         {
             cmds.buscar_fallecido(Txtcedula,TxtEstado_cliente);
             cmds.cargues_cliente(Txtcedula, TxtCargues);
-            string largo = Txtcedula.Text;
-            string length = Convert.ToString(largo.Length);
+            //string largo = Txtcedula.Text;
+            //string length = Convert.ToString(largo.Length);
 
-            if (length == "6")
-            {
-                Txtcedula.Text = "000000" + Txtcedula.Text;
-            }
-            else if (length == "7")
-            {
-                Txtcedula.Text = "00000" + Txtcedula.Text;
-            }
-            else if (length == "8")
-            {
-                Txtcedula.Text = "0000" + Txtcedula.Text;
-            }
-            else if (length == "9")
-            {
-                Txtcedula.Text = "000" + Txtcedula.Text;
-            }
-            else if (length == "10")
-            {
-                Txtcedula.Text = "00" + Txtcedula.Text;
-            }
+            //if (length == "6")
+            //{
+            //    Txtcedula.Text = "000000" + Txtcedula.Text;
+            //}
+            //else if (length == "7")
+            //{
+            //    Txtcedula.Text = "00000" + Txtcedula.Text;
+            //}
+            //else if (length == "8")
+            //{
+            //    Txtcedula.Text = "0000" + Txtcedula.Text;
+            //}
+            //else if (length == "9")
+            //{
+            //    Txtcedula.Text = "000" + Txtcedula.Text;
+            //}
+            //else if (length == "10")
+            //{
+            //    Txtcedula.Text = "00" + Txtcedula.Text;
+            //}
         }
 
         private void Btn_Guardar_Click(object sender, EventArgs e)
@@ -371,13 +366,13 @@ namespace Usuarios_planta.Formularios
             if (validar())
             {
                 cmds.Insertar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
-                                   Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                   Txttotal_recaudo, Txtscoring, cmbfuerza, cmbdestino, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
                                    Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
                                    dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
                                    Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
                 cmds.historico_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
-                                    Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                    Txttotal_recaudo, Txtscoring, cmbfuerza, cmbdestino, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
                                     Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
                                     dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
                                     Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
@@ -393,13 +388,13 @@ namespace Usuarios_planta.Formularios
             if (validar())
             {
                 cmds.actualizar_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
-                                    Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                    Txttotal_recaudo, Txtscoring, cmbfuerza, cmbdestino, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
                                     Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
                                     dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
                                     Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
 
                 cmds.historico_colp(Txtradicado, Txtcedula, Txtnombre, TxtEstado_cliente, Txtafiliacion1, Txtafiliacion2,
-                                    Txttotal_recaudo, Txtscoring, cmbfuerza, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
+                                    Txttotal_recaudo, Txtscoring, cmbfuerza, cmbdestino, Txtmonto, Txtplazo, Txtcuota, Txttotal, Txtpagare,
                                     Txtnit, Txtentidad, Txtcuota_letras, Txttotal_letras, cmbestado, cmbcargue, dtpcargue, dtpproximo,
                                     dtpfecha_desembolso, cmbresultado, cmbrechazo, Txtplano_dia, Txtplano_pre,
                                     Txtcomentarios, TxtIDfuncionario, TxtNomFuncionario);
@@ -477,6 +472,21 @@ namespace Usuarios_planta.Formularios
             this.Close();
             Form formulario = new VoBo();
             formulario.Show();
+        }
+
+        private void cmbresultado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbresultado.Text=="Negada" )
+            {
+                if (cmbdestino.Text == "CK Libranza + Rtq")
+                {
+                    MessageBox.Show("Proceder a recuperar el descuento");
+
+                }else if (cmbdestino.Text == "Retanqueo")
+                {
+                    MessageBox.Show("Proceder a recuperar el descuento");
+                }
+            }
         }
     }
 }

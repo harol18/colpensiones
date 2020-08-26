@@ -14,8 +14,8 @@ namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Planos : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        //MySqlConnection con = new MySqlConnection("server=;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+       
         Comandos cmds = new Comandos();
 
         public Planos()
@@ -92,7 +92,7 @@ namespace Usuarios_planta.Capa_presentacion
                     {
                         //Este bucle for recorre cada columna y el número de fila
                         //se pasa desde el bucle for arriba.
-                        for (int c = 0; c <= dgv_altas.Columns.Count - 1; c++)
+                        for (int c = 0; c <= dgv_bajas.Columns.Count - 1; c++)
                         {
                             sLine = sLine + dgv_bajas.Rows[r].Cells[c].Value;
                             if (c != dgv_bajas.Columns.Count - 1)
