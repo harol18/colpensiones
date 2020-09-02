@@ -204,5 +204,10 @@ namespace Usuarios_planta.Capa_presentacion
             Txtplano_alta.Text = "PR_00860034133_" + año + mes + dia + TxtCod_plano.Text;
             Txtplano_baja.Text = "RP_00860034133_" + año + mes + dia + TxtCod_plano.Text;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,7 +22,7 @@ namespace Usuarios_planta
 
 
         public void Insertar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
-                                  TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
+                                  TextBox Txttotal_recaudo, TextBox Txtscoring, TextBox Txtconsecutivo, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
                                   TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue,
                                   DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
                                   TextBox Txtplano_dia, TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
@@ -44,6 +44,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_N_Afiliacion2", Txtafiliacion2.Text);
                 cmd.Parameters.AddWithValue("@_Recaudo", Txttotal_recaudo.Text);
                 cmd.Parameters.AddWithValue("@_Scoring", Txtscoring.Text);
+                cmd.Parameters.AddWithValue("@_Consecutivo", Txtconsecutivo.Text);
                 cmd.Parameters.AddWithValue("@_Fuerza_Venta", cmbfuerza.Text);
                 cmd.Parameters.AddWithValue("@_Destino", cmbdestino.Text);
                 cmd.Parameters.AddWithValue("@_Monto_Aprobado", Txtmonto.Text);
@@ -101,7 +102,7 @@ namespace Usuarios_planta
         }
 
         public void actualizar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
-                                    TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
+                                    TextBox Txttotal_recaudo, TextBox Txtscoring, TextBox Txtconsecutivo, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
                                     TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue,
                                     DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
                                     TextBox Txtplano_dia, TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
@@ -122,6 +123,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_N_Afiliacion2", Txtafiliacion2.Text);
                 cmd.Parameters.AddWithValue("@_Recaudo", Txttotal_recaudo.Text);
                 cmd.Parameters.AddWithValue("@_Scoring", Txtscoring.Text);
+                cmd.Parameters.AddWithValue("@_Consecutivo", Txtconsecutivo.Text);
                 cmd.Parameters.AddWithValue("@_Fuerza_Venta", cmbfuerza.Text);
                 cmd.Parameters.AddWithValue("@_Destino", cmbdestino.Text);
                 cmd.Parameters.AddWithValue("@_Monto_Aprobado", Txtmonto.Text);
@@ -179,7 +181,7 @@ namespace Usuarios_planta
         }
 
         public void buscar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
-                                TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
+                                TextBox Txttotal_recaudo, TextBox Txtscoring, TextBox Txtconsecutivo, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
                                 TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue, 
                                 DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
                                 TextBox Txtplano_dia,TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
@@ -204,6 +206,7 @@ namespace Usuarios_planta
                     Txtafiliacion2.Text = registro["N_Afiliacion2"].ToString();
                     Txttotal_recaudo.Text = registro["Recaudo"].ToString();
                     Txtscoring.Text = registro["Scoring"].ToString();
+                    Txtconsecutivo.Text = registro["Consecutivo"].ToString();
                     cmbfuerza.Text = registro["Fuerza_Venta"].ToString();
                     cmbdestino.Text = registro["Destino"].ToString();
                     Txtmonto.Text = registro["Monto_Aprobado"].ToString();
@@ -277,7 +280,7 @@ namespace Usuarios_planta
         }
 
         public void historico_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
-                                   TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
+                                   TextBox Txttotal_recaudo, TextBox Txtscoring, TextBox Txtconsecutivo, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
                                    TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue,
                                    DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
                                    TextBox Txtplano_dia, TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
@@ -298,6 +301,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_N_Afiliacion2", Txtafiliacion2.Text);
                 cmd.Parameters.AddWithValue("@_Recaudo", Txttotal_recaudo.Text);
                 cmd.Parameters.AddWithValue("@_Scoring", Txtscoring.Text);
+                cmd.Parameters.AddWithValue("@_Consecutivo", Txtconsecutivo.Text);
                 cmd.Parameters.AddWithValue("@_Fuerza_Venta", cmbfuerza.Text);
                 cmd.Parameters.AddWithValue("@_Destino", cmbdestino.Text);
                 cmd.Parameters.AddWithValue("@_Monto_Aprobado", Txtmonto.Text);
