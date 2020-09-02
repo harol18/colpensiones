@@ -15,7 +15,8 @@ namespace Usuarios_planta.Formularios
 {
     public partial class Informes : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=UserApp;password=Indra2020;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        
         Comandos cmds = new Comandos();
        
         public Informes()

@@ -16,15 +16,16 @@ namespace Usuarios_planta
 {
     class Comandos
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
         
 
 
+
         public void Insertar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
-            TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal, TextBox Txtpagare,
-            TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue, DateTimePicker dtpcargue, DateTimePicker dtpproximo,
-            DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia, TextBox Txtplano_pre,
-            TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+                                  TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
+                                  TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue,
+                                  DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
+                                  TextBox Txtplano_dia, TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
             con.Open(); 
             MySqlCommand cmd = new MySqlCommand("insertar_colp", con);
@@ -47,7 +48,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Destino", cmbdestino.Text);
                 cmd.Parameters.AddWithValue("@_Monto_Aprobado", Txtmonto.Text);
                 cmd.Parameters.AddWithValue("@_Plazo_Aprobado", Txtplazo.Text);
-                cmd.Parameters.AddWithValue("@_Cuota", Txtcuota.Text);
+                cmd.Parameters.AddWithValue("@_Cuota", string.Format("{0:#}", double.Parse(Txtcuota.Text)));// se formate el numero para que no vaya con el . de la separacion de miles
                 cmd.Parameters.AddWithValue("@_Total", Txttotal.Text);
                 cmd.Parameters.AddWithValue("@_Pagare", Txtpagare.Text);
                 cmd.Parameters.AddWithValue("@_Nit", Txtnit.Text);
@@ -57,12 +58,14 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Estado_operacion", cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_Estado_cargue", cmbcargue.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_Cargue", dtpcargue.Text);
-                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
-                cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);                
+                cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);
                 cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
-                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);   
+                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);         
+                cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
+                cmd.Parameters.AddWithValue("@_Fecha_respuesta", dtpfecha_rpta.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Dia", Txtplano_dia.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Pre", Txtplano_pre.Text);
+                cmd.Parameters.AddWithValue("@_Plano", TxtN_Plano.Text);
                 cmd.Parameters.AddWithValue("@_Comentarios", Txtcomentarios.Text);
                 cmd.Parameters.AddWithValue("@_Id_Funcionario", TxtIDfuncionario.Text);
                 cmd.Parameters.AddWithValue("@_Nombre_Funcionario", TxtNomFuncionario.Text);
@@ -98,10 +101,10 @@ namespace Usuarios_planta
         }
 
         public void actualizar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
-                                    TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal, 
+                                    TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
                                     TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue,
-                                    DateTimePicker dtpcargue, DateTimePicker dtpproximo, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia, 
-                                    TextBox Txtplano_pre,TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+                                    DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
+                                    TextBox Txtplano_dia, TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
             con.Open();
             MySqlCommand cmd = new MySqlCommand("actualizar_colp", con);
@@ -123,7 +126,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Destino", cmbdestino.Text);
                 cmd.Parameters.AddWithValue("@_Monto_Aprobado", Txtmonto.Text);
                 cmd.Parameters.AddWithValue("@_Plazo_Aprobado", Txtplazo.Text);
-                cmd.Parameters.AddWithValue("@_Cuota", Txtcuota.Text);
+                cmd.Parameters.AddWithValue("@_Cuota", string.Format("{0:#}", double.Parse(Txtcuota.Text))); // se formate el numero para que no vaya con el . de la separacion de miles
                 cmd.Parameters.AddWithValue("@_Total", Txttotal.Text);
                 cmd.Parameters.AddWithValue("@_Pagare", Txtpagare.Text);
                 cmd.Parameters.AddWithValue("@_Nit", Txtnit.Text);
@@ -133,12 +136,14 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Estado_operacion", cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_Estado_cargue", cmbcargue.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_Cargue", dtpcargue.Text);
-                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
-                cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);                
+                cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);
                 cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
+                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
+                cmd.Parameters.AddWithValue("@_Fecha_respuesta", dtpfecha_rpta.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Dia", Txtplano_dia.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Pre", Txtplano_pre.Text);
+                cmd.Parameters.AddWithValue("@_Plano", TxtN_Plano.Text);
                 cmd.Parameters.AddWithValue("@_Comentarios", Txtcomentarios.Text);
                 cmd.Parameters.AddWithValue("@_Id_Funcionario", TxtIDfuncionario.Text);
                 cmd.Parameters.AddWithValue("@_Nombre_Funcionario", TxtNomFuncionario.Text);
@@ -175,11 +180,13 @@ namespace Usuarios_planta
 
         public void buscar_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
                                 TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
-                                TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue,
-                                DateTimePicker dtpcargue, DateTimePicker dtpproximo, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia,
-                                TextBox Txtplano_pre, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+                                TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue, 
+                                DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
+                                TextBox Txtplano_dia,TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
+
             
+
             try
             {
                 con.Open();
@@ -211,15 +218,17 @@ namespace Usuarios_planta
                     cmbestado.Text = registro["Estado_operacion"].ToString();
                     cmbcargue.Text = registro["Estado_cargue"].ToString();
                     dtpcargue.Text = registro["Fecha_Cargue"].ToString();
-                    dtpproximo.Text = registro["Proximo_Cargue"].ToString();
-                    dtpfecha_desembolso.Text = registro["Fecha_desembolso"].ToString();                    
+                    dtpfecha_desembolso.Text = registro["Fecha_desembolso"].ToString();
                     cmbresultado.Text = registro["Respuesta_Cargue"].ToString();
+                    dtpproximo.Text = registro["Proximo_Cargue"].ToString();             
                     cmbrechazo.Text = registro["Causal_Rechazo"].ToString();
+                    dtpfecha_rpta.Text = registro["Fecha_respuesta"].ToString();
                     Txtplano_dia.Text = registro["Plano_Dia"].ToString();
                     Txtplano_pre.Text = registro["Plano_Pre"].ToString();
+                    TxtN_Plano.Text = registro["plano"].ToString();
                     Txtcomentarios.Text = registro["Comentarios"].ToString();
                     TxtIDfuncionario.Text = registro["Id_Funcionario"].ToString();
-                    TxtNomFuncionario.Text = registro["Nombre_Funcionario"].ToString();          
+                    TxtNomFuncionario.Text = registro["Nombre_Funcionario"].ToString();
                     con.Close();
                 }
                 con.Close();
@@ -236,7 +245,9 @@ namespace Usuarios_planta
 
         }
 
-        public void total_cargue(TextBox Txtcedula, TextBox TxtCargues)
+
+
+        public void total_cargue(TextBox Txtafiliacion2, TextBox TxtCargues)
         {
 
             try
@@ -244,13 +255,12 @@ namespace Usuarios_planta
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand("total_cargues", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@_cedula", Txtcedula.Text);
+                cmd.Parameters.AddWithValue("@_N_Afiliacion2", Txtafiliacion2.Text);
                 MySqlDataReader registro;
                 registro = cmd.ExecuteReader();
                 if (registro.Read())
                 {
                     TxtCargues.Text = registro[0].ToString();
-                    con.Close();
                 }
                 con.Close();
 
@@ -269,8 +279,8 @@ namespace Usuarios_planta
         public void historico_colp(TextBox Txtradicado, TextBox Txtcedula, TextBox Txtnombre, TextBox TxtEstado_cliente, TextBox Txtafiliacion1, TextBox Txtafiliacion2,
                                    TextBox Txttotal_recaudo, TextBox Txtscoring, ComboBox cmbfuerza, ComboBox cmbdestino, TextBox Txtmonto, TextBox Txtplazo, TextBox Txtcuota, TextBox Txttotal,
                                    TextBox Txtpagare, TextBox Txtnit, TextBox Txtentidad, TextBox Txtcuota_letras, TextBox Txttotal_letras, ComboBox cmbestado, ComboBox cmbcargue,
-                                   DateTimePicker dtpcargue, DateTimePicker dtpproximo, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, ComboBox cmbrechazo, TextBox Txtplano_dia,
-                                   TextBox Txtplano_pre, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
+                                   DateTimePicker dtpcargue, DateTimePicker dtpfecha_desembolso, ComboBox cmbresultado, DateTimePicker dtpproximo, ComboBox cmbrechazo, DateTimePicker dtpfecha_rpta,
+                                   TextBox Txtplano_dia, TextBox Txtplano_pre, TextBox TxtN_Plano, TextBox Txtcomentarios, TextBox TxtIDfuncionario, TextBox TxtNomFuncionario)
         {
 
             con.Open();
@@ -292,7 +302,7 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Destino", cmbdestino.Text);
                 cmd.Parameters.AddWithValue("@_Monto_Aprobado", Txtmonto.Text);
                 cmd.Parameters.AddWithValue("@_Plazo_Aprobado", Txtplazo.Text);
-                cmd.Parameters.AddWithValue("@_Cuota", Txtcuota.Text);
+                cmd.Parameters.AddWithValue("@_Cuota", string.Format("{0:#}", double.Parse(Txtcuota.Text))); // se formate el numero para que no vaya con el . de la separacion de miles
                 cmd.Parameters.AddWithValue("@_Total", Txttotal.Text);
                 cmd.Parameters.AddWithValue("@_Pagare", Txtpagare.Text);
                 cmd.Parameters.AddWithValue("@_Nit", Txtnit.Text);
@@ -302,12 +312,14 @@ namespace Usuarios_planta
                 cmd.Parameters.AddWithValue("@_Estado_operacion", cmbestado.Text);
                 cmd.Parameters.AddWithValue("@_Estado_cargue", cmbcargue.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_Cargue", dtpcargue.Text);
-                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtpfecha_desembolso.Text);
                 cmd.Parameters.AddWithValue("@_Respuesta_Cargue", cmbresultado.Text);
+                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 cmd.Parameters.AddWithValue("@_Causal_Rechazo", cmbrechazo.Text);
+                cmd.Parameters.AddWithValue("@_Fecha_respuesta", dtpfecha_rpta.Text);
                 cmd.Parameters.AddWithValue("@_Plano_Dia", Txtplano_dia.Text);
-                cmd.Parameters.AddWithValue("@_Plano_Pre", Txtplano_pre.Text);
+                cmd.Parameters.AddWithValue("@_Plano_Pre", Txtplano_pre.Text); 
+                cmd.Parameters.AddWithValue("@_Plano", TxtN_Plano.Text);
                 cmd.Parameters.AddWithValue("@_Comentarios", Txtcomentarios.Text);
                 cmd.Parameters.AddWithValue("@_Id_Funcionario", TxtIDfuncionario.Text);
                 cmd.Parameters.AddWithValue("@_Nombre_Funcionario", TxtNomFuncionario.Text);
@@ -348,7 +360,6 @@ namespace Usuarios_planta
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand("total_negadas", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@_Radicado", Txtradicado.Text);
                 MySqlDataReader registro;
                 registro = cmd.ExecuteReader();
                 if (registro.Read())
@@ -378,7 +389,6 @@ namespace Usuarios_planta
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand("total_pendientes", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@_Radicado", Txtradicado.Text);
                 MySqlDataReader registro;
                 registro = cmd.ExecuteReader();
                 if (registro.Read())
@@ -406,7 +416,7 @@ namespace Usuarios_planta
             {
                 con.Open();
                 DataTable dt = new DataTable();
-                MySqlCommand cmd = new MySqlCommand("buscar_cargue", con);
+                MySqlCommand cmd = new MySqlCommand("buscar_negados", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpfecha.Text);
                 MySqlDataAdapter registro = new MySqlDataAdapter(cmd);
@@ -462,6 +472,7 @@ namespace Usuarios_planta
                 registro.Fill(dt);
                 dgv_bajas.DataSource = dt;
                 con.Close();
+
             }
             catch (Exception ex)
             {
@@ -525,10 +536,11 @@ namespace Usuarios_planta
         {
             try
             {
-                MySqlCommand comando = new MySqlCommand("SELECT COUNT(*) FROM historico_colp WHERE N_Afiliacion2 = @N_Afiliacion2 ", con);
-                comando.Parameters.AddWithValue("@N_Afiliacion2", Txtafiliacion2.Text);
+                MySqlCommand cmd = new MySqlCommand("total_Cargues", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_Afiliacion", Txtafiliacion2.Text);
                 con.Open();
-                MySqlDataReader registro = comando.ExecuteReader();
+                MySqlDataReader registro = cmd.ExecuteReader();
                 if (registro.Read())
                 {
                     TxtCargues.Text = registro[0].ToString();
@@ -603,6 +615,40 @@ namespace Usuarios_planta
 
             }
 
+        }
+
+        public void planos_cargue(DataGridView dgv_altas, TextBox Txtplano_alta)
+        {
+
+            try
+            {
+
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("planos_cargue", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //con.Open();
+                //string query = "INSERT INTO prueba (Afiliacion, plano, Fecha_cargue) VALUES (@param1, @param2, @param3)";
+                //MySqlCommand cmd = new MySqlCommand(query, con);
+                foreach (DataGridViewRow row in dgv_altas.Rows)
+                {
+                    cmd.Parameters.Clear();
+
+                    cmd.Parameters.AddWithValue("@_Afiliacion", Convert.ToString(row.Cells[0].Value));
+                    cmd.Parameters.AddWithValue("@_plano", Txtplano_alta.Text);
+                    //cmd.Parameters.AddWithValue("@_Fecha_cargue", dtphoy.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+                MessageBox.Show("Ok información actualizada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
         }
     }
 }

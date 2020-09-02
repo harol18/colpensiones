@@ -14,8 +14,9 @@ namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Planos : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
        
+
         Comandos cmds = new Comandos();
 
         public Planos()
@@ -41,10 +42,12 @@ namespace Usuarios_planta.Capa_presentacion
 
         private void Btn_Crear_plano_Click(object sender, EventArgs e)
         {
+            
             if (ch_plano_alta.Checked)
             {
                 //Esta línea de código crea un archivo de texto para la exportación de datos.
-                StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_alta.Text+".txt");
+                StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_alta.Text + ".txt");
+                //StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtplano_alta.Text + ".txt");
                 try
                 {
                     string sLine = "";
@@ -61,7 +64,8 @@ namespace Usuarios_planta.Capa_presentacion
                             {
                                 // Una coma se agrega como delimitador de texto para
                                 //para separar cada campo en el archivo de texto.
-                                //Puede elegir otro carácter como delimitador.
+                                //Puede elegir otro carácter como delimitador, para este caso no se pone delimitador dado
+                                //que el plano va toda la informacion pegada sin espacios ni caracteres.
                                 sLine = sLine + "";
                             }
                         }
@@ -72,6 +76,7 @@ namespace Usuarios_planta.Capa_presentacion
 
                     file.Close();
                     MessageBox.Show("Ok archivo txt creado.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cmds.planos_cargue(dgv_altas, Txtplano_alta);                
                 }
                 catch (Exception err)
                 {
@@ -83,6 +88,7 @@ namespace Usuarios_planta.Capa_presentacion
             {
                 //Esta línea de código crea un archivo de texto para la exportación de datos.
                 StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_baja.Text + ".txt");
+                //StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtplano_baja.Text + ".txt");
                 try
                 {
                     string sLine = "";
@@ -158,10 +164,45 @@ namespace Usuarios_planta.Capa_presentacion
             }
         }
 
-        private void Btncopy1_Click(object sender, EventArgs e)
+        private void btn_Actualizarbd_Click(object sender, EventArgs e)
         {
-            Clipboard.SetDataObject(
-                this.dgv_altas.GetClipboardContent());
+         
+            try
+            {
+                con.Open();
+                string query = "INSERT INTO prueba (Afiliacion, plano, Fecha_cargue) VALUES (@param1, @param2, @param3)";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                foreach (DataGridViewRow row in dgv_altas.Rows)
+                {
+                    cmd.Parameters.Clear();
+
+                    cmd.Parameters.AddWithValue("@param1", Convert.ToString(row.Cells[0].Value));
+                    cmd.Parameters.AddWithValue("@param2", Txtplano_alta.Text);
+                    cmd.Parameters.AddWithValue("@param3", dtphoy.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+                MessageBox.Show("Ok información actualizada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
+        private void Planos_Load(object sender, EventArgs e)
+        {
+            String sCadena = dtphoy.Text;
+            String año = sCadena.Substring(6, 4);
+            String mes = sCadena.Substring(3, 2);
+            String dia = sCadena.Substring(0, 2);
+
+            Txtplano_alta.Text = "PR_00860034133_" + año + mes + dia + TxtCod_plano.Text;
+            Txtplano_baja.Text = "RP_00860034133_" + año + mes + dia + TxtCod_plano.Text;
         }
     }
 }

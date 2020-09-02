@@ -19,7 +19,8 @@ namespace Usuarios_planta.Capa_presentacion
     public partial class Cargue_archivos : Form
     {
         MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        //MySqlConnection con = new MySqlConnection("server=82.2.121.99;Uid=userapp;password=userapp;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        
+
 
         public Cargue_archivos()
         {
@@ -118,9 +119,9 @@ namespace Usuarios_planta.Capa_presentacion
             {
                 con.Open();
                 MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO contabilizados_colp(Fecha_corte,Convenio,Nombre_Convenio,Consecutivo,Scoring,Nombre_cliente,Cedula,Fecha_desembolso,Importe," +
-                    "Plazo,TasaE_A,TasaN_M,Cuota,Estado,Marcacion_retanqueo) values (@Fecha_corte,@Convenio,@Nombre_Convenio,@Consecutivo,@Scoring,@Nombre_cliente,@Cedula,@Fecha_desembolso,@Importe," +
-                    "@Plazo,@TasaE_A,@TasaN_M,@Cuota,@Estado,@Marcacion_retanqueo)";
+                cmd.CommandText = "INSERT INTO contabilizados_colp(Fecha_corte,Convenio,Nombre_Convenio,Consecutivo,Scoring,Nombre,Cedula_cliente,Fecha_desembolso,Importe," +
+                    "Plazo,TasaE_A,TasaN_M,Valor_cuota,Estado,Marcacion_retanqueo,RP) values (@Fecha_corte,@Convenio,@Nombre_Convenio,@Consecutivo,@Scoring,@Nombre,@Cedula_cliente,@Fecha_desembolso,@Importe," +
+                    "@Plazo,@TasaE_A,@TasaN_M,@Valor_cuota,@Estado,@Marcacion_retanqueo,@RP)";
                 
                 Excel.Application xlApp = new Excel.Application();
                 Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(d.FileName);
@@ -137,16 +138,17 @@ namespace Usuarios_planta.Capa_presentacion
                     cmd.Parameters.AddWithValue("@Nombre_Convenio", range.Cells[i, 3].Value2);
                     cmd.Parameters.AddWithValue("@Consecutivo", range.Cells[i, 4].Value2.ToString());
                     cmd.Parameters.AddWithValue("@Scoring", range.Cells[i, 10].Value2.ToString());
-                    cmd.Parameters.AddWithValue("@Nombre_cliente", range.Cells[i, 11].Value2.ToString());
-                    cmd.Parameters.AddWithValue("@Cedula", range.Cells[i, 12].Value2.ToString());
+                    cmd.Parameters.AddWithValue("@Nombre", range.Cells[i, 11].Value2.ToString());
+                    cmd.Parameters.AddWithValue("@Cedula_cliente", range.Cells[i, 12].Value2.ToString());
                     cmd.Parameters.AddWithValue("@Fecha_desembolso", Convert.ToDateTime(range.Cells[i, 13].Value2).ToString("dd/MM/yyyy"));
                     cmd.Parameters.AddWithValue("@Importe", range.Cells[i, 14].Value2.ToString());
                     cmd.Parameters.AddWithValue("@Plazo", range.Cells[i, 15].Value2.ToString());
                     cmd.Parameters.AddWithValue("@TasaE_A", range.Cells[i, 16].Value2.ToString());
                     cmd.Parameters.AddWithValue("@TasaN_M", range.Cells[i, 17].Value2.ToString());
-                    cmd.Parameters.AddWithValue("@Cuota", range.Cells[i, 18].Value2.ToString());
+                    cmd.Parameters.AddWithValue("@Valor_cuota", range.Cells[i, 18].Value2.ToString());
                     cmd.Parameters.AddWithValue("@Estado", range.Cells[i, 38].Value2.ToString());
                     cmd.Parameters.AddWithValue("@Marcacion_retanqueo", range.Cells[i, 39].value2);
+                    cmd.Parameters.AddWithValue("@RP", "RP");
                     cmd.ExecuteNonQuery();
                 }
                 ///cerrar excel///

@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Txtplano_baja = new System.Windows.Forms.TextBox();
             this.dtphoy = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.Txtplano_alta = new System.Windows.Forms.TextBox();
+            this.Btn_Crear_plano = new FontAwesome.Sharp.IconButton();
             this.ch_plano_baja = new System.Windows.Forms.CheckBox();
             this.ch_plano_alta = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,12 +44,11 @@
             this.cmb_Gestion2 = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_Validar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgv_altas = new System.Windows.Forms.DataGridView();
             this.dgv_bajas = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Txtplano_baja = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -54,10 +56,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.Btn_Crear_plano = new FontAwesome.Sharp.IconButton();
-            this.btn_Validar = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Validar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_altas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bajas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -65,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Validar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -92,6 +93,29 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(246, 523);
             this.panel3.TabIndex = 49;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 415);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 17);
+            this.label6.TabIndex = 64;
+            this.label6.Text = "Plano Baja";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Txtplano_baja
+            // 
+            this.Txtplano_baja.BackColor = System.Drawing.SystemColors.Menu;
+            this.Txtplano_baja.Enabled = false;
+            this.Txtplano_baja.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtplano_baja.Location = new System.Drawing.Point(6, 436);
+            this.Txtplano_baja.Multiline = true;
+            this.Txtplano_baja.Name = "Txtplano_baja";
+            this.Txtplano_baja.Size = new System.Drawing.Size(235, 24);
+            this.Txtplano_baja.TabIndex = 63;
+            this.Txtplano_baja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtphoy
             // 
@@ -126,6 +150,25 @@
             this.Txtplano_alta.Size = new System.Drawing.Size(235, 24);
             this.Txtplano_alta.TabIndex = 60;
             this.Txtplano_alta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Btn_Crear_plano
+            // 
+            this.Btn_Crear_plano.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_Crear_plano.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_Crear_plano.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Btn_Crear_plano.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
+            this.Btn_Crear_plano.IconColor = System.Drawing.Color.Black;
+            this.Btn_Crear_plano.IconSize = 18;
+            this.Btn_Crear_plano.Location = new System.Drawing.Point(77, 270);
+            this.Btn_Crear_plano.Name = "Btn_Crear_plano";
+            this.Btn_Crear_plano.Rotation = 0D;
+            this.Btn_Crear_plano.Size = new System.Drawing.Size(89, 30);
+            this.Btn_Crear_plano.TabIndex = 59;
+            this.Btn_Crear_plano.Text = "Crear Plano";
+            this.Btn_Crear_plano.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Crear_plano.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.Btn_Crear_plano.UseVisualStyleBackColor = true;
+            this.Btn_Crear_plano.Click += new System.EventHandler(this.Btn_Crear_plano_Click);
             // 
             // ch_plano_baja
             // 
@@ -202,7 +245,6 @@
             this.cmb_Gestion2.Items.AddRange(new object[] {
             "Negados",
             "Contabilizados",
-            "Pte Respuesta",
             "Pendiente Cargue"});
             this.cmb_Gestion2.Location = new System.Drawing.Point(6, 153);
             this.cmb_Gestion2.Name = "cmb_Gestion2";
@@ -230,15 +272,28 @@
             this.label4.Text = "Validacion por Fechas";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btn_Validar
+            // 
+            this.btn_Validar.BackColor = System.Drawing.Color.White;
+            this.btn_Validar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Validar.Image = global::Usuarios_planta.Properties.Resources.eye_50px;
+            this.btn_Validar.Location = new System.Drawing.Point(133, 218);
+            this.btn_Validar.Name = "btn_Validar";
+            this.btn_Validar.Size = new System.Drawing.Size(28, 24);
+            this.btn_Validar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_Validar.TabIndex = 41;
+            this.btn_Validar.TabStop = false;
+            this.btn_Validar.Click += new System.EventHandler(this.btn_Validar_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 198);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cargue";
+            this.label1.Text = "Fecha";
             // 
             // label3
             // 
@@ -254,6 +309,7 @@
             // 
             // dgv_altas
             // 
+            this.dgv_altas.AllowUserToAddRows = false;
             this.dgv_altas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_altas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_altas.Location = new System.Drawing.Point(263, 151);
@@ -263,6 +319,7 @@
             // 
             // dgv_bajas
             // 
+            this.dgv_bajas.AllowUserToAddRows = false;
             this.dgv_bajas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgv_bajas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_bajas.Location = new System.Drawing.Point(736, 151);
@@ -270,37 +327,14 @@
             this.dgv_bajas.Size = new System.Drawing.Size(450, 495);
             this.dgv_bajas.TabIndex = 60;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 415);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 17);
-            this.label6.TabIndex = 64;
-            this.label6.Text = "Plano Baja";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Txtplano_baja
-            // 
-            this.Txtplano_baja.BackColor = System.Drawing.SystemColors.Menu;
-            this.Txtplano_baja.Enabled = false;
-            this.Txtplano_baja.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtplano_baja.Location = new System.Drawing.Point(6, 436);
-            this.Txtplano_baja.Multiline = true;
-            this.Txtplano_baja.Name = "Txtplano_baja";
-            this.Txtplano_baja.Size = new System.Drawing.Size(235, 24);
-            this.Txtplano_baja.TabIndex = 63;
-            this.Txtplano_baja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Emoji", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(157)))));
             this.label7.Location = new System.Drawing.Point(437, 116);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 28);
+            this.label7.Size = new System.Drawing.Size(58, 26);
             this.label7.TabIndex = 61;
             this.label7.Text = "Altas";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -308,11 +342,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(157)))));
             this.label8.Location = new System.Drawing.Point(936, 116);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 28);
+            this.label8.Size = new System.Drawing.Size(61, 26);
             this.label8.TabIndex = 62;
             this.label8.Text = "Bajas";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -364,36 +398,14 @@
             this.pictureBox6.TabIndex = 50;
             this.pictureBox6.TabStop = false;
             // 
-            // Btn_Crear_plano
+            // button1
             // 
-            this.Btn_Crear_plano.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Btn_Crear_plano.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Btn_Crear_plano.IconChar = FontAwesome.Sharp.IconChar.FileAlt;
-            this.Btn_Crear_plano.IconColor = System.Drawing.Color.Black;
-            this.Btn_Crear_plano.IconSize = 18;
-            this.Btn_Crear_plano.Location = new System.Drawing.Point(77, 270);
-            this.Btn_Crear_plano.Name = "Btn_Crear_plano";
-            this.Btn_Crear_plano.Rotation = 0D;
-            this.Btn_Crear_plano.Size = new System.Drawing.Size(89, 30);
-            this.Btn_Crear_plano.TabIndex = 59;
-            this.Btn_Crear_plano.Text = "Crear Plano";
-            this.Btn_Crear_plano.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Crear_plano.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.Btn_Crear_plano.UseVisualStyleBackColor = true;
-            this.Btn_Crear_plano.Click += new System.EventHandler(this.Btn_Crear_plano_Click);
-            // 
-            // btn_Validar
-            // 
-            this.btn_Validar.BackColor = System.Drawing.Color.White;
-            this.btn_Validar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Validar.Image = global::Usuarios_planta.Properties.Resources.eye_50px;
-            this.btn_Validar.Location = new System.Drawing.Point(138, 218);
-            this.btn_Validar.Name = "btn_Validar";
-            this.btn_Validar.Size = new System.Drawing.Size(28, 24);
-            this.btn_Validar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_Validar.TabIndex = 41;
-            this.btn_Validar.TabStop = false;
-            this.btn_Validar.Click += new System.EventHandler(this.btn_Validar_Click);
+            this.button1.Location = new System.Drawing.Point(595, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 63;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Planos
             // 
@@ -401,6 +413,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1212, 788);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgv_bajas);
@@ -416,10 +429,12 @@
             this.Name = "Planos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Planos";
+            this.Load += new System.EventHandler(this.Planos_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Validar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_altas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bajas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -427,7 +442,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Validar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -462,5 +476,6 @@
         private System.Windows.Forms.TextBox Txtplano_baja;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
     }
 }
