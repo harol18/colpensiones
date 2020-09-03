@@ -67,9 +67,11 @@ namespace Usuarios_planta.Formularios
             }
         }
 
-       
+        DateTime fecha = DateTime.Now;
+
         private void FormGiros_Load(object sender, EventArgs e)
         {
+            lblfecha_actual.Text = fecha.ToString("dd/MM/yyyy");
             lbafiliacion.Visible = false;
             dtpcargue.Text = "01/01/2020";
             dtpfecha_desembolso.Text = "01/01/2020";
@@ -94,7 +96,7 @@ namespace Usuarios_planta.Formularios
 
         private void Txtcuota_TextChanged(object sender, EventArgs e)
         {
-              Txtcuota_letras.Text = c.enletras(Txtcuota.Text).ToLower();           
+              Txtcuota_letras.Text = c.enletras(Txtcuota.Text).ToUpper() + " PESOS";           
         }
 
         private void Txtcedula_TextChanged(object sender, EventArgs e)
@@ -156,7 +158,7 @@ namespace Usuarios_planta.Formularios
 
         private void Txttotal_TextChanged(object sender, EventArgs e)
         {
-            Txttotal_letras.Text = c.enletras(Txttotal.Text).ToLower();
+            Txttotal_letras.Text = c.enletras(Txttotal.Text).ToUpper() + " PESOS";
         }
 
         private void Txtafiliacion2_Validated(object sender, EventArgs e)
@@ -377,13 +379,13 @@ namespace Usuarios_planta.Formularios
 
         private void Txtplazo_Validated(object sender, EventArgs e)
         {
-            string largo = Txtplazo.Text;
-            string length = Convert.ToString(largo.Length);
+            //string largo = Txtplazo.Text;
+            //string length = Convert.ToString(largo.Length);
 
-            if (length == "2")
-            {
-                Txtplazo.Text = "0" + Txtplazo.Text;
-            }
+            //if (length == "2")
+            //{
+            //    Txtplazo.Text = "0" + Txtplazo.Text;
+            //}
 
         }
 
@@ -428,8 +430,15 @@ namespace Usuarios_planta.Formularios
         {
             if (cmbresultado.Text=="Negada")
             {
-                dtpproximo.Value = dtpcargue.Value.AddDays(15);
+               dtpproximo.Value = fecha.AddDays(15);
             }
+        }
+
+        private void Btn_busqueda_Click(object sender, EventArgs e)
+        {
+            cmds.busqueda_plano(dgv_datos_plano,Txtbusqueda);
+            dgv_datos_plano.Columns.Add("Dictamen","Aprobada");
+            
         }
     }
 }

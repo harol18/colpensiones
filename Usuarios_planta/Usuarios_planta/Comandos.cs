@@ -414,15 +414,15 @@ namespace Usuarios_planta
 
         }
 
-        public void buscar_negados(DateTimePicker dtpfecha, DataGridView dataGridView2)
+        public void alta_negados(DateTimePicker dtpproximo, DataGridView dataGridView2)
         {
             try
             {
                 con.Open();
                 DataTable dt = new DataTable();
-                MySqlCommand cmd = new MySqlCommand("buscar_negados", con);
+                MySqlCommand cmd = new MySqlCommand("alta_negados", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpfecha.Text);
+                cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 MySqlDataAdapter registro = new MySqlDataAdapter(cmd);
                 registro.Fill(dt);
                 dataGridView2.DataSource = dt;
@@ -561,6 +561,31 @@ namespace Usuarios_planta
             }
         }
 
+        public void busqueda_plano(DataGridView dgv_datos_plano, TextBox Txtbusqueda)
+        {
+
+            try
+            {
+                con.Open();
+                DataTable dt = new DataTable();
+                MySqlCommand cmd = new MySqlCommand("busqueda_plano", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@_plano", Txtbusqueda.Text);
+                MySqlDataAdapter registro = new MySqlDataAdapter(cmd);
+                registro.Fill(dt);
+                dgv_datos_plano.DataSource = dt;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("No hay operaciones para cargar el dia seleccionado", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
         public void recaudo(TextBox Txtafiliacion2, TextBox Txttotal_Recaudo)
         {
             try
@@ -621,7 +646,7 @@ namespace Usuarios_planta
 
         }
 
-        public void planos_cargue(DataGridView dgv_altas, TextBox Txtplano_alta)
+        public void planos_cargue(DataGridView dgv_altas, TextBox Txtplano_alta, DateTimePicker dtp_cargue)
         {
 
             try
@@ -630,16 +655,51 @@ namespace Usuarios_planta
                 con.Open();
                 MySqlCommand cmd = new MySqlCommand("planos_cargue", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                //con.Open();
-                //string query = "INSERT INTO prueba (Afiliacion, plano, Fecha_cargue) VALUES (@param1, @param2, @param3)";
-                //MySqlCommand cmd = new MySqlCommand(query, con);
+                
                 foreach (DataGridViewRow row in dgv_altas.Rows)
                 {
                     cmd.Parameters.Clear();
 
                     cmd.Parameters.AddWithValue("@_Afiliacion", Convert.ToString(row.Cells[0].Value));
                     cmd.Parameters.AddWithValue("@_plano", Txtplano_alta.Text);
-                    //cmd.Parameters.AddWithValue("@_Fecha_cargue", dtphoy.Text);
+                    cmd.Parameters.AddWithValue("@_Fecha_cargue", fecha.ToString("dd/MM/yyyy"));
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+                MessageBox.Show("Ok información actualizada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
+        DateTime fecha = DateTime.Now;
+
+        public void cargue_contabilizados(DataGridView dgv_altas, DateTimePicker dtp_cargue, TextBox Txtplano_alta)
+        {
+
+
+
+            try
+            {
+
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("cargue_contabilizados", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DataGridViewRow row in dgv_altas.Rows)
+                {
+                    cmd.Parameters.Clear();
+
+                    cmd.Parameters.AddWithValue("@_N_Afiliacion2", Convert.ToString(row.Cells[0].Value));
+                    cmd.Parameters.AddWithValue("@_Estado_cargue", "Ok Cargue");
+                    cmd.Parameters.AddWithValue("@_Fecha_Cargue", fecha.ToString("dd/MM/yyyy"));
+                    cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtp_cargue.Text);
+                    cmd.Parameters.AddWithValue("@_Plano", Txtplano_alta.Text);
                     cmd.ExecuteNonQuery();
                 }
                 con.Close();

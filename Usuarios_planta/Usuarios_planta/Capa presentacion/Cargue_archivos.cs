@@ -121,7 +121,7 @@ namespace Usuarios_planta.Capa_presentacion
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "INSERT INTO contabilizados_colp(Fecha_corte,Convenio,Nombre_Convenio,Consecutivo,Scoring,Nombre,Cedula_cliente,Fecha_desembolso,Importe," +
                     "Plazo,TasaE_A,TasaN_M,Valor_cuota,Estado,Marcacion_retanqueo,RP) values (@Fecha_corte,@Convenio,@Nombre_Convenio,@Consecutivo,@Scoring,@Nombre,@Cedula_cliente,@Fecha_desembolso,@Importe," +
-                    "@Plazo,@TasaE_A,@TasaN_M,@Valor_cuota,@Estado,@Marcacion_retanqueo,@RP)";
+                    "@Plazo,@TasaE_A,@TasaN_M,@Valor_cuota,@Estado,@Marcacion_retanqueo)";
                 
                 Excel.Application xlApp = new Excel.Application();
                 Excel.Workbook xlWorkbook = xlApp.Workbooks.Open(d.FileName);
@@ -148,7 +148,6 @@ namespace Usuarios_planta.Capa_presentacion
                     cmd.Parameters.AddWithValue("@Valor_cuota", range.Cells[i, 18].Value2.ToString());
                     cmd.Parameters.AddWithValue("@Estado", range.Cells[i, 38].Value2.ToString());
                     cmd.Parameters.AddWithValue("@Marcacion_retanqueo", range.Cells[i, 39].value2);
-                    cmd.Parameters.AddWithValue("@RP", "RP");
                     cmd.ExecuteNonQuery();
                 }
                 ///cerrar excel///

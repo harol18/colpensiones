@@ -194,6 +194,7 @@ namespace Usuarios_planta
         private void BtnCrear_planos_Click(object sender, EventArgs e)
         {
             AbrirFormHijo(new Planos());
+            
         }
 
         private void BtnCrear_planos_MouseHover(object sender, EventArgs e)

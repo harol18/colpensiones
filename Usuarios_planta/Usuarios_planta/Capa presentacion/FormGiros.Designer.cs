@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGiros));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Txtconsecutivo = new System.Windows.Forms.TextBox();
             this.cmbdestino = new System.Windows.Forms.ComboBox();
             this.Txtentidad = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
@@ -61,6 +62,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.Txtradicado = new System.Windows.Forms.TextBox();
             this.Txtafiliacion1 = new System.Windows.Forms.TextBox();
             this.Txtnombre = new System.Windows.Forms.TextBox();
@@ -80,6 +82,7 @@
             this.lbafiliacion = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtpfecha_desembolso = new System.Windows.Forms.DateTimePicker();
+            this.dtpfecha_rpta = new System.Windows.Forms.DateTimePicker();
             this.TxtN_Plano = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.cmbestado = new System.Windows.Forms.ComboBox();
@@ -122,11 +125,9 @@
             this.Btn_busqueda = new System.Windows.Forms.PictureBox();
             this.Txtbusqueda = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.dgv_altas = new System.Windows.Forms.DataGridView();
+            this.dgv_datos_plano = new System.Windows.Forms.DataGridView();
             this.label36 = new System.Windows.Forms.Label();
-            this.dtpfecha_rpta = new System.Windows.Forms.DateTimePicker();
-            this.Txtconsecutivo = new System.Windows.Forms.TextBox();
-            this.label37 = new System.Windows.Forms.Label();
+            this.lblfecha_actual = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -145,7 +146,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_busqueda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_altas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos_plano)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -190,19 +191,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Información Prestamo";
             // 
+            // Txtconsecutivo
+            // 
+            this.Txtconsecutivo.BackColor = System.Drawing.SystemColors.Menu;
+            this.Txtconsecutivo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txtconsecutivo.Location = new System.Drawing.Point(311, 23);
+            this.Txtconsecutivo.MaxLength = 100;
+            this.Txtconsecutivo.Multiline = true;
+            this.Txtconsecutivo.Name = "Txtconsecutivo";
+            this.Txtconsecutivo.Size = new System.Drawing.Size(102, 26);
+            this.Txtconsecutivo.TabIndex = 6;
+            this.Txtconsecutivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // cmbdestino
             // 
             this.cmbdestino.BackColor = System.Drawing.SystemColors.Menu;
+            this.cmbdestino.Enabled = false;
             this.cmbdestino.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbdestino.FormattingEnabled = true;
-            this.cmbdestino.Items.AddRange(new object[] {
-            "CK Libranza",
-            "CK Libranza + Rtq",
-            "Retanqueo"});
             this.cmbdestino.Location = new System.Drawing.Point(680, 24);
             this.cmbdestino.Name = "cmbdestino";
             this.cmbdestino.Size = new System.Drawing.Size(127, 25);
-            this.cmbdestino.TabIndex = 7;
+            this.cmbdestino.TabIndex = 8;
+            this.cmbdestino.Text = "CPK LIBRANZA";
             // 
             // Txtentidad
             // 
@@ -212,7 +223,7 @@
             this.Txtentidad.Multiline = true;
             this.Txtentidad.Name = "Txtentidad";
             this.Txtentidad.Size = new System.Drawing.Size(289, 26);
-            this.Txtentidad.TabIndex = 11;
+            this.Txtentidad.TabIndex = 12;
             this.Txtentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox8
@@ -368,7 +379,7 @@
             this.Txtplazo.Multiline = true;
             this.Txtplazo.Name = "Txtplazo";
             this.Txtplazo.Size = new System.Drawing.Size(89, 26);
-            this.Txtplazo.TabIndex = 9;
+            this.Txtplazo.TabIndex = 10;
             this.Txtplazo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtplazo.Validated += new System.EventHandler(this.Txtplazo_Validated);
             // 
@@ -381,7 +392,7 @@
             this.Txtmonto.Multiline = true;
             this.Txtmonto.Name = "Txtmonto";
             this.Txtmonto.Size = new System.Drawing.Size(128, 26);
-            this.Txtmonto.TabIndex = 8;
+            this.Txtmonto.TabIndex = 9;
             this.Txtmonto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtmonto.Validated += new System.EventHandler(this.Txtmonto_Validated);
             // 
@@ -394,7 +405,7 @@
             this.Txtcuota.Multiline = true;
             this.Txtcuota.Name = "Txtcuota";
             this.Txtcuota.Size = new System.Drawing.Size(127, 26);
-            this.Txtcuota.TabIndex = 10;
+            this.Txtcuota.TabIndex = 11;
             this.Txtcuota.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtcuota.TextChanged += new System.EventHandler(this.Txtcuota_TextChanged);
             this.Txtcuota.Validated += new System.EventHandler(this.Txtcuota_Validated);
@@ -424,7 +435,7 @@
             this.cmbfuerza.Location = new System.Drawing.Point(487, 24);
             this.cmbfuerza.Name = "cmbfuerza";
             this.cmbfuerza.Size = new System.Drawing.Size(127, 25);
-            this.cmbfuerza.TabIndex = 6;
+            this.cmbfuerza.TabIndex = 7;
             // 
             // label6
             // 
@@ -546,6 +557,16 @@
             this.label8.TabIndex = 22;
             this.label8.Text = "Monto";
             // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(233, 27);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(78, 17);
+            this.label37.TabIndex = 162;
+            this.label37.Text = "Consecutivo";
+            // 
             // Txtradicado
             // 
             this.Txtradicado.BackColor = System.Drawing.SystemColors.Menu;
@@ -556,7 +577,6 @@
             this.Txtradicado.Size = new System.Drawing.Size(108, 26);
             this.Txtradicado.TabIndex = 0;
             this.Txtradicado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            
             // 
             // Txtafiliacion1
             // 
@@ -798,10 +818,22 @@
             this.dtpfecha_desembolso.CustomFormat = "";
             this.dtpfecha_desembolso.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfecha_desembolso.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfecha_desembolso.Location = new System.Drawing.Point(113, 67);
+            this.dtpfecha_desembolso.Location = new System.Drawing.Point(113, 64);
             this.dtpfecha_desembolso.Name = "dtpfecha_desembolso";
             this.dtpfecha_desembolso.Size = new System.Drawing.Size(107, 25);
-            this.dtpfecha_desembolso.TabIndex = 184;
+            this.dtpfecha_desembolso.TabIndex = 16;
+            // 
+            // dtpfecha_rpta
+            // 
+            this.dtpfecha_rpta.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpfecha_rpta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtpfecha_rpta.CustomFormat = "";
+            this.dtpfecha_rpta.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpfecha_rpta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfecha_rpta.Location = new System.Drawing.Point(113, 103);
+            this.dtpfecha_rpta.Name = "dtpfecha_rpta";
+            this.dtpfecha_rpta.Size = new System.Drawing.Size(107, 25);
+            this.dtpfecha_rpta.TabIndex = 20;
             // 
             // TxtN_Plano
             // 
@@ -837,7 +869,7 @@
             this.cmbestado.Location = new System.Drawing.Point(115, 25);
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(148, 25);
-            this.cmbestado.TabIndex = 12;
+            this.cmbestado.TabIndex = 13;
             // 
             // Btncopy2
             // 
@@ -872,7 +904,7 @@
             this.TxtIDfuncionario.Multiline = true;
             this.TxtIDfuncionario.Name = "TxtIDfuncionario";
             this.TxtIDfuncionario.Size = new System.Drawing.Size(123, 26);
-            this.TxtIDfuncionario.TabIndex = 20;
+            this.TxtIDfuncionario.TabIndex = 22;
             this.TxtIDfuncionario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TxtIDfuncionario.TextChanged += new System.EventHandler(this.TxtIDfuncionario_TextChanged);
             // 
@@ -887,7 +919,7 @@
             this.cmbcargue.Location = new System.Drawing.Point(387, 25);
             this.cmbcargue.Name = "cmbcargue";
             this.cmbcargue.Size = new System.Drawing.Size(139, 25);
-            this.cmbcargue.TabIndex = 13;
+            this.cmbcargue.TabIndex = 14;
             // 
             // Txtcomentarios
             // 
@@ -898,7 +930,7 @@
             this.Txtcomentarios.Multiline = true;
             this.Txtcomentarios.Name = "Txtcomentarios";
             this.Txtcomentarios.Size = new System.Drawing.Size(656, 53);
-            this.Txtcomentarios.TabIndex = 19;
+            this.Txtcomentarios.TabIndex = 21;
             // 
             // Txtplano_pre
             // 
@@ -920,7 +952,8 @@
             this.cmbresultado.Items.AddRange(new object[] {
             "Aprobada",
             "Negada",
-            "Pendiente rta"});
+            "Devuelto",
+            "Pdte Dictamen"});
             this.cmbresultado.Location = new System.Drawing.Point(288, 64);
             this.cmbresultado.Name = "cmbresultado";
             this.cmbresultado.Size = new System.Drawing.Size(139, 25);
@@ -935,7 +968,7 @@
             this.cmbrechazo.Location = new System.Drawing.Point(724, 64);
             this.cmbrechazo.Name = "cmbrechazo";
             this.cmbrechazo.Size = new System.Drawing.Size(83, 25);
-            this.cmbrechazo.TabIndex = 18;
+            this.cmbrechazo.TabIndex = 19;
             this.cmbrechazo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbrechazo_MouseClick);
             // 
             // Txtplano_dia
@@ -958,7 +991,7 @@
             this.dtpproximo.Location = new System.Drawing.Point(536, 64);
             this.dtpproximo.Name = "dtpproximo";
             this.dtpproximo.Size = new System.Drawing.Size(107, 25);
-            this.dtpproximo.TabIndex = 15;
+            this.dtpproximo.TabIndex = 18;
             // 
             // label14
             // 
@@ -981,7 +1014,7 @@
             this.dtpcargue.Location = new System.Drawing.Point(658, 25);
             this.dtpcargue.Name = "dtpcargue";
             this.dtpcargue.Size = new System.Drawing.Size(111, 25);
-            this.dtpcargue.TabIndex = 14;
+            this.dtpcargue.TabIndex = 15;
             // 
             // label16
             // 
@@ -1154,7 +1187,7 @@
             this.button1.Location = new System.Drawing.Point(330, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(77, 27);
-            this.button1.TabIndex = 50;
+            this.button1.TabIndex = 26;
             this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -1170,7 +1203,7 @@
             this.Btn_Nuevo.Location = new System.Drawing.Point(229, 6);
             this.Btn_Nuevo.Name = "Btn_Nuevo";
             this.Btn_Nuevo.Size = new System.Drawing.Size(77, 27);
-            this.Btn_Nuevo.TabIndex = 49;
+            this.Btn_Nuevo.TabIndex = 25;
             this.Btn_Nuevo.Text = "Nuevo";
             this.Btn_Nuevo.UseVisualStyleBackColor = false;
             this.Btn_Nuevo.Click += new System.EventHandler(this.Btn_Nuevo_Click);
@@ -1186,7 +1219,7 @@
             this.Btn_Actualizar.Location = new System.Drawing.Point(113, 6);
             this.Btn_Actualizar.Name = "Btn_Actualizar";
             this.Btn_Actualizar.Size = new System.Drawing.Size(94, 27);
-            this.Btn_Actualizar.TabIndex = 48;
+            this.Btn_Actualizar.TabIndex = 24;
             this.Btn_Actualizar.Text = "Actualizar";
             this.Btn_Actualizar.UseVisualStyleBackColor = false;
             this.Btn_Actualizar.Click += new System.EventHandler(this.Btn_Actualizar_Click_1);
@@ -1202,7 +1235,7 @@
             this.Btn_Guardar.Location = new System.Drawing.Point(12, 6);
             this.Btn_Guardar.Name = "Btn_Guardar";
             this.Btn_Guardar.Size = new System.Drawing.Size(87, 27);
-            this.Btn_Guardar.TabIndex = 47;
+            this.Btn_Guardar.TabIndex = 23;
             this.Btn_Guardar.Text = "Guardar";
             this.Btn_Guardar.UseVisualStyleBackColor = false;
             this.Btn_Guardar.Click += new System.EventHandler(this.Btn_Guardar_Click);
@@ -1247,15 +1280,16 @@
             // 
             // Btn_busqueda
             // 
-            this.Btn_busqueda.BackColor = System.Drawing.SystemColors.Menu;
+            this.Btn_busqueda.BackColor = System.Drawing.Color.White;
             this.Btn_busqueda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_busqueda.Image = global::Usuarios_planta.Properties.Resources.search_26px;
-            this.Btn_busqueda.Location = new System.Drawing.Point(1024, 88);
+            this.Btn_busqueda.Location = new System.Drawing.Point(1093, 88);
             this.Btn_busqueda.Name = "Btn_busqueda";
-            this.Btn_busqueda.Size = new System.Drawing.Size(28, 26);
+            this.Btn_busqueda.Size = new System.Drawing.Size(24, 26);
             this.Btn_busqueda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Btn_busqueda.TabIndex = 47;
             this.Btn_busqueda.TabStop = false;
+            this.Btn_busqueda.Click += new System.EventHandler(this.Btn_busqueda_Click);
             // 
             // Txtbusqueda
             // 
@@ -1264,32 +1298,31 @@
             this.Txtbusqueda.Location = new System.Drawing.Point(861, 88);
             this.Txtbusqueda.Multiline = true;
             this.Txtbusqueda.Name = "Txtbusqueda";
-            this.Txtbusqueda.Size = new System.Drawing.Size(157, 26);
+            this.Txtbusqueda.Size = new System.Drawing.Size(226, 26);
             this.Txtbusqueda.TabIndex = 46;
-            this.Txtbusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Segoe UI Emoji", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(94)))), ((int)(((byte)(157)))));
-            this.label32.Location = new System.Drawing.Point(1080, 9);
+            this.label32.Location = new System.Drawing.Point(992, 18);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(106, 43);
+            this.label32.Size = new System.Drawing.Size(264, 32);
             this.label32.TabIndex = 53;
-            this.label32.Text = "Editar";
+            this.label32.Text = "Actualizar Respuestas";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgv_altas
+            // dgv_datos_plano
             // 
-            this.dgv_altas.AllowUserToAddRows = false;
-            this.dgv_altas.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgv_altas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv_altas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_altas.Location = new System.Drawing.Point(861, 128);
-            this.dgv_altas.Name = "dgv_altas";
-            this.dgv_altas.Size = new System.Drawing.Size(311, 195);
-            this.dgv_altas.TabIndex = 54;
+            this.dgv_datos_plano.AllowUserToAddRows = false;
+            this.dgv_datos_plano.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgv_datos_plano.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_datos_plano.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_datos_plano.Location = new System.Drawing.Point(861, 128);
+            this.dgv_datos_plano.Name = "dgv_datos_plano";
+            this.dgv_datos_plano.Size = new System.Drawing.Size(414, 497);
+            this.dgv_datos_plano.TabIndex = 54;
             // 
             // label36
             // 
@@ -1297,52 +1330,29 @@
             this.label36.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(858, 64);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(170, 17);
+            this.label36.Size = new System.Drawing.Size(145, 17);
             this.label36.TabIndex = 55;
-            this.label36.Text = "Buscar por N° Afiliación";
+            this.label36.Text = "Buscar por N° Plano";
             // 
-            // dtpfecha_rpta
+            // lblfecha_actual
             // 
-            this.dtpfecha_rpta.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpfecha_rpta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtpfecha_rpta.CustomFormat = "";
-            this.dtpfecha_rpta.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpfecha_rpta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfecha_rpta.Location = new System.Drawing.Point(113, 103);
-            this.dtpfecha_rpta.Name = "dtpfecha_rpta";
-            this.dtpfecha_rpta.Size = new System.Drawing.Size(107, 25);
-            this.dtpfecha_rpta.TabIndex = 183;
-            // 
-            // Txtconsecutivo
-            // 
-            this.Txtconsecutivo.BackColor = System.Drawing.SystemColors.Menu;
-            this.Txtconsecutivo.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txtconsecutivo.Location = new System.Drawing.Point(311, 23);
-            this.Txtconsecutivo.MaxLength = 100;
-            this.Txtconsecutivo.Multiline = true;
-            this.Txtconsecutivo.Name = "Txtconsecutivo";
-            this.Txtconsecutivo.Size = new System.Drawing.Size(102, 26);
-            this.Txtconsecutivo.TabIndex = 161;
-            this.Txtconsecutivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(233, 27);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(78, 17);
-            this.label37.TabIndex = 162;
-            this.label37.Text = "Consecutivo";
+            this.lblfecha_actual.AutoSize = true;
+            this.lblfecha_actual.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha_actual.Location = new System.Drawing.Point(122, 33);
+            this.lblfecha_actual.Name = "lblfecha_actual";
+            this.lblfecha_actual.Size = new System.Drawing.Size(0, 17);
+            this.lblfecha_actual.TabIndex = 66;
+            this.lblfecha_actual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormGiros
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1198, 710);
+            this.ClientSize = new System.Drawing.Size(1301, 710);
+            this.Controls.Add(this.lblfecha_actual);
             this.Controls.Add(this.label36);
-            this.Controls.Add(this.dgv_altas);
+            this.Controls.Add(this.dgv_datos_plano);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.Btn_busqueda);
             this.Controls.Add(this.Txtbusqueda);
@@ -1384,7 +1394,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btn_busqueda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_altas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos_plano)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1482,11 +1492,12 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.PictureBox Btn_busqueda;
         private System.Windows.Forms.TextBox Txtbusqueda;
-        private System.Windows.Forms.DataGridView dgv_altas;
+        private System.Windows.Forms.DataGridView dgv_datos_plano;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.DateTimePicker dtpfecha_desembolso;
         private System.Windows.Forms.DateTimePicker dtpfecha_rpta;
         private System.Windows.Forms.TextBox Txtconsecutivo;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label lblfecha_actual;
     }
 }

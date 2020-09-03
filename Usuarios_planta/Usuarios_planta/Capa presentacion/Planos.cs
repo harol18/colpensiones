@@ -37,8 +37,8 @@ namespace Usuarios_planta.Capa_presentacion
         }
 
         DateTime fecha = DateTime.Now;
-        
-        
+
+
 
         private void Btn_Crear_plano_Click(object sender, EventArgs e)
         {
@@ -76,7 +76,7 @@ namespace Usuarios_planta.Capa_presentacion
 
                     file.Close();
                     MessageBox.Show("Ok archivo txt creado.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cmds.planos_cargue(dgv_altas, Txtplano_alta);                
+                    cmds.cargue_contabilizados(dgv_altas, dtp_cargue, Txtplano_alta);                
                 }
                 catch (Exception err)
                 {
@@ -132,12 +132,13 @@ namespace Usuarios_planta.Capa_presentacion
 
         private void TxtCod_funcionario_TextChanged(object sender, EventArgs e)
         {
-            String sCadena = dtphoy.Text;
+
+            String sCadena = fecha.ToString("dd/MM/yyyy");
             String año = sCadena.Substring(6, 4);
             String mes = sCadena.Substring(3, 2);
             String dia = sCadena.Substring(0, 2);
 
-            Txtplano_alta.Text = "PR_00860034133_"+año+mes+dia+TxtCod_plano.Text;
+            Txtplano_alta.Text = "PR_00860034133_" + año + mes + dia + TxtCod_plano.Text;
             Txtplano_baja.Text = "RP_00860034133_" + año + mes + dia + TxtCod_plano.Text;
         }
 
@@ -145,7 +146,7 @@ namespace Usuarios_planta.Capa_presentacion
         {
             if (cmb_Gestion2.Text == "Negados")
             {
-                cmds.buscar_negados(dtp_cargue, dgv_altas);
+                cmds.alta_negados(dtp_cargue, dgv_altas);
             }
             else if (cmb_Gestion2.Text == "Pendiente Cargue")
             {
@@ -163,46 +164,21 @@ namespace Usuarios_planta.Capa_presentacion
                 cmds.pendiente_respuesta(dgv_altas);
             }
         }
-
-        private void btn_Actualizarbd_Click(object sender, EventArgs e)
-        {
-         
-            try
-            {
-                con.Open();
-                string query = "INSERT INTO prueba (Afiliacion, plano, Fecha_cargue) VALUES (@param1, @param2, @param3)";
-                MySqlCommand cmd = new MySqlCommand(query, con);
-                foreach (DataGridViewRow row in dgv_altas.Rows)
-                {
-                    cmd.Parameters.Clear();
-
-                    cmd.Parameters.AddWithValue("@param1", Convert.ToString(row.Cells[0].Value));
-                    cmd.Parameters.AddWithValue("@param2", Txtplano_alta.Text);
-                    cmd.Parameters.AddWithValue("@param3", dtphoy.Text);
-                    cmd.ExecuteNonQuery();
-                }
-                con.Close();
-                MessageBox.Show("Ok información actualizada");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex);
-                MessageBox.Show("", ex.ToString());
-                con.Close();
-                MessageBox.Show("Conexion cerrada");
-
-            }
-        }
-
+        
         private void Planos_Load(object sender, EventArgs e)
         {
-            String sCadena = dtphoy.Text;
+            
+            lblfecha_actual.Text = fecha.ToString("dd/MM/yyyy");
+
+            String sCadena = fecha.ToString("dd/MM/yyyy");
             String año = sCadena.Substring(6, 4);
             String mes = sCadena.Substring(3, 2);
             String dia = sCadena.Substring(0, 2);
 
             Txtplano_alta.Text = "PR_00860034133_" + año + mes + dia + TxtCod_plano.Text;
             Txtplano_baja.Text = "RP_00860034133_" + año + mes + dia + TxtCod_plano.Text;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)

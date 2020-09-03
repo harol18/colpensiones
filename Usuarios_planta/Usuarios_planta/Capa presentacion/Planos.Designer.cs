@@ -31,7 +31,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.Txtplano_baja = new System.Windows.Forms.TextBox();
-            this.dtphoy = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.Txtplano_alta = new System.Windows.Forms.TextBox();
             this.Btn_Crear_plano = new FontAwesome.Sharp.IconButton();
@@ -56,7 +55,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblfecha_actual = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Validar)).BeginInit();
@@ -75,7 +74,6 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.Txtplano_baja);
-            this.panel3.Controls.Add(this.dtphoy);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.Txtplano_alta);
             this.panel3.Controls.Add(this.Btn_Crear_plano);
@@ -116,17 +114,6 @@
             this.Txtplano_baja.Size = new System.Drawing.Size(235, 24);
             this.Txtplano_baja.TabIndex = 63;
             this.Txtplano_baja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dtphoy
-            // 
-            this.dtphoy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dtphoy.Enabled = false;
-            this.dtphoy.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtphoy.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtphoy.Location = new System.Drawing.Point(56, 76);
-            this.dtphoy.Name = "dtphoy";
-            this.dtphoy.Size = new System.Drawing.Size(108, 25);
-            this.dtphoy.TabIndex = 62;
             // 
             // label5
             // 
@@ -398,15 +385,15 @@
             this.pictureBox6.TabIndex = 50;
             this.pictureBox6.TabStop = false;
             // 
-            // button1
+            // lblfecha_actual
             // 
-            this.button1.Location = new System.Drawing.Point(595, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.lblfecha_actual.AutoSize = true;
+            this.lblfecha_actual.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfecha_actual.Location = new System.Drawing.Point(157, 92);
+            this.lblfecha_actual.Name = "lblfecha_actual";
+            this.lblfecha_actual.Size = new System.Drawing.Size(0, 17);
+            this.lblfecha_actual.TabIndex = 65;
+            this.lblfecha_actual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Planos
             // 
@@ -414,7 +401,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1212, 788);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.lblfecha_actual);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dgv_bajas);
@@ -471,12 +458,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox Txtplano_alta;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dtphoy;
         private System.Windows.Forms.DataGridView dgv_bajas;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Txtplano_baja;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblfecha_actual;
     }
 }
