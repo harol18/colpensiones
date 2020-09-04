@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             this.panelSideMenu = new System.Windows.Forms.Panel();
+            this.panel_planos = new System.Windows.Forms.Panel();
+            this.Btnplanos_dia = new FontAwesome.Sharp.IconButton();
+            this.Btnplanos_ckl = new FontAwesome.Sharp.IconButton();
             this.BtnCrear_planos = new FontAwesome.Sharp.IconButton();
             this.BtnCargue_archivos = new FontAwesome.Sharp.IconButton();
             this.panelinformes = new System.Windows.Forms.Panel();
-            this.BtnInformes_conv = new FontAwesome.Sharp.IconButton();
-            this.BtnInformes_colp = new FontAwesome.Sharp.IconButton();
+            this.BtnInformes_dia = new FontAwesome.Sharp.IconButton();
+            this.BtnInformes_ckl = new FontAwesome.Sharp.IconButton();
             this.BtnInformes = new FontAwesome.Sharp.IconButton();
             this.BtnSalir = new FontAwesome.Sharp.IconButton();
             this.panelCheques = new System.Windows.Forms.Panel();
@@ -45,6 +48,7 @@
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panelSideMenu.SuspendLayout();
+            this.panel_planos.SuspendLayout();
             this.panelinformes.SuspendLayout();
             this.panelCheques.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,6 +58,7 @@
             // panelSideMenu
             // 
             this.panelSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
+            this.panelSideMenu.Controls.Add(this.panel_planos);
             this.panelSideMenu.Controls.Add(this.BtnCrear_planos);
             this.panelSideMenu.Controls.Add(this.BtnCargue_archivos);
             this.panelSideMenu.Controls.Add(this.panelinformes);
@@ -67,6 +72,69 @@
             this.panelSideMenu.Name = "panelSideMenu";
             this.panelSideMenu.Size = new System.Drawing.Size(143, 720);
             this.panelSideMenu.TabIndex = 0;
+            // 
+            // panel_planos
+            // 
+            this.panel_planos.Controls.Add(this.Btnplanos_dia);
+            this.panel_planos.Controls.Add(this.Btnplanos_ckl);
+            this.panel_planos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_planos.Location = new System.Drawing.Point(0, 489);
+            this.panel_planos.Name = "panel_planos";
+            this.panel_planos.Size = new System.Drawing.Size(143, 77);
+            this.panel_planos.TabIndex = 15;
+            // 
+            // Btnplanos_dia
+            // 
+            this.Btnplanos_dia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btnplanos_dia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btnplanos_dia.FlatAppearance.BorderSize = 0;
+            this.Btnplanos_dia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(118)))), ((int)(((byte)(176)))));
+            this.Btnplanos_dia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(81)))));
+            this.Btnplanos_dia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnplanos_dia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Btnplanos_dia.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnplanos_dia.ForeColor = System.Drawing.Color.LightGray;
+            this.Btnplanos_dia.IconChar = FontAwesome.Sharp.IconChar.Bars;
+            this.Btnplanos_dia.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btnplanos_dia.IconSize = 25;
+            this.Btnplanos_dia.Location = new System.Drawing.Point(0, 40);
+            this.Btnplanos_dia.Name = "Btnplanos_dia";
+            this.Btnplanos_dia.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.Btnplanos_dia.Rotation = 0D;
+            this.Btnplanos_dia.Size = new System.Drawing.Size(143, 40);
+            this.Btnplanos_dia.TabIndex = 2;
+            this.Btnplanos_dia.Text = "Dia - Dia";
+            this.Btnplanos_dia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btnplanos_dia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btnplanos_dia.UseVisualStyleBackColor = true;
+            this.Btnplanos_dia.MouseHover += new System.EventHandler(this.Btnplanos_dia_MouseHover);
+            // 
+            // Btnplanos_ckl
+            // 
+            this.Btnplanos_ckl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btnplanos_ckl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Btnplanos_ckl.FlatAppearance.BorderSize = 0;
+            this.Btnplanos_ckl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(118)))), ((int)(((byte)(176)))));
+            this.Btnplanos_ckl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(81)))));
+            this.Btnplanos_ckl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btnplanos_ckl.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.Btnplanos_ckl.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btnplanos_ckl.ForeColor = System.Drawing.Color.LightGray;
+            this.Btnplanos_ckl.IconChar = FontAwesome.Sharp.IconChar.GripHorizontal;
+            this.Btnplanos_ckl.IconColor = System.Drawing.Color.Gainsboro;
+            this.Btnplanos_ckl.IconSize = 25;
+            this.Btnplanos_ckl.Location = new System.Drawing.Point(0, 0);
+            this.Btnplanos_ckl.Name = "Btnplanos_ckl";
+            this.Btnplanos_ckl.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.Btnplanos_ckl.Rotation = 0D;
+            this.Btnplanos_ckl.Size = new System.Drawing.Size(143, 40);
+            this.Btnplanos_ckl.TabIndex = 1;
+            this.Btnplanos_ckl.Text = "CK Libranza";
+            this.Btnplanos_ckl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btnplanos_ckl.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.Btnplanos_ckl.UseVisualStyleBackColor = true;
+            this.Btnplanos_ckl.Click += new System.EventHandler(this.Btnplanos_ckl_Click);
+            this.Btnplanos_ckl.MouseHover += new System.EventHandler(this.Btnplanos_ckl_MouseHover);
             // 
             // BtnCrear_planos
             // 
@@ -87,7 +155,7 @@
             this.BtnCrear_planos.Rotation = 0D;
             this.BtnCrear_planos.Size = new System.Drawing.Size(143, 60);
             this.BtnCrear_planos.TabIndex = 14;
-            this.BtnCrear_planos.Text = "Crear Planos";
+            this.BtnCrear_planos.Text = "Planos";
             this.BtnCrear_planos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnCrear_planos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCrear_planos.UseVisualStyleBackColor = true;
@@ -122,64 +190,64 @@
             // 
             // panelinformes
             // 
-            this.panelinformes.Controls.Add(this.BtnInformes_conv);
-            this.panelinformes.Controls.Add(this.BtnInformes_colp);
+            this.panelinformes.Controls.Add(this.BtnInformes_dia);
+            this.panelinformes.Controls.Add(this.BtnInformes_ckl);
             this.panelinformes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelinformes.Location = new System.Drawing.Point(0, 289);
             this.panelinformes.Name = "panelinformes";
             this.panelinformes.Size = new System.Drawing.Size(143, 80);
             this.panelinformes.TabIndex = 12;
             // 
-            // BtnInformes_conv
+            // BtnInformes_dia
             // 
-            this.BtnInformes_conv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInformes_conv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnInformes_conv.FlatAppearance.BorderSize = 0;
-            this.BtnInformes_conv.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(118)))), ((int)(((byte)(176)))));
-            this.BtnInformes_conv.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(81)))));
-            this.BtnInformes_conv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInformes_conv.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BtnInformes_conv.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInformes_conv.ForeColor = System.Drawing.Color.LightGray;
-            this.BtnInformes_conv.IconChar = FontAwesome.Sharp.IconChar.ThList;
-            this.BtnInformes_conv.IconColor = System.Drawing.Color.Gainsboro;
-            this.BtnInformes_conv.IconSize = 25;
-            this.BtnInformes_conv.Location = new System.Drawing.Point(0, 40);
-            this.BtnInformes_conv.Name = "BtnInformes_conv";
-            this.BtnInformes_conv.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.BtnInformes_conv.Rotation = 0D;
-            this.BtnInformes_conv.Size = new System.Drawing.Size(143, 40);
-            this.BtnInformes_conv.TabIndex = 10;
-            this.BtnInformes_conv.Text = "Dia - Dia";
-            this.BtnInformes_conv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInformes_conv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnInformes_conv.UseVisualStyleBackColor = true;
+            this.BtnInformes_dia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInformes_dia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnInformes_dia.FlatAppearance.BorderSize = 0;
+            this.BtnInformes_dia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(118)))), ((int)(((byte)(176)))));
+            this.BtnInformes_dia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(81)))));
+            this.BtnInformes_dia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInformes_dia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnInformes_dia.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInformes_dia.ForeColor = System.Drawing.Color.LightGray;
+            this.BtnInformes_dia.IconChar = FontAwesome.Sharp.IconChar.ChartLine;
+            this.BtnInformes_dia.IconColor = System.Drawing.Color.Gainsboro;
+            this.BtnInformes_dia.IconSize = 25;
+            this.BtnInformes_dia.Location = new System.Drawing.Point(0, 40);
+            this.BtnInformes_dia.Name = "BtnInformes_dia";
+            this.BtnInformes_dia.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.BtnInformes_dia.Rotation = 0D;
+            this.BtnInformes_dia.Size = new System.Drawing.Size(143, 40);
+            this.BtnInformes_dia.TabIndex = 10;
+            this.BtnInformes_dia.Text = "Dia - Dia";
+            this.BtnInformes_dia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnInformes_dia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnInformes_dia.UseVisualStyleBackColor = true;
             // 
-            // BtnInformes_colp
+            // BtnInformes_ckl
             // 
-            this.BtnInformes_colp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnInformes_colp.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnInformes_colp.FlatAppearance.BorderSize = 0;
-            this.BtnInformes_colp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(118)))), ((int)(((byte)(176)))));
-            this.BtnInformes_colp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(81)))));
-            this.BtnInformes_colp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInformes_colp.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.BtnInformes_colp.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnInformes_colp.ForeColor = System.Drawing.Color.LightGray;
-            this.BtnInformes_colp.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
-            this.BtnInformes_colp.IconColor = System.Drawing.Color.Gainsboro;
-            this.BtnInformes_colp.IconSize = 22;
-            this.BtnInformes_colp.Location = new System.Drawing.Point(0, 0);
-            this.BtnInformes_colp.Name = "BtnInformes_colp";
-            this.BtnInformes_colp.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
-            this.BtnInformes_colp.Rotation = 0D;
-            this.BtnInformes_colp.Size = new System.Drawing.Size(143, 40);
-            this.BtnInformes_colp.TabIndex = 11;
-            this.BtnInformes_colp.Text = "CK Libranza";
-            this.BtnInformes_colp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnInformes_colp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnInformes_colp.UseVisualStyleBackColor = true;
-            this.BtnInformes_colp.Click += new System.EventHandler(this.BtnInformes_colp_Click);
+            this.BtnInformes_ckl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInformes_ckl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnInformes_ckl.FlatAppearance.BorderSize = 0;
+            this.BtnInformes_ckl.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(118)))), ((int)(((byte)(176)))));
+            this.BtnInformes_ckl.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(81)))));
+            this.BtnInformes_ckl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInformes_ckl.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.BtnInformes_ckl.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnInformes_ckl.ForeColor = System.Drawing.Color.LightGray;
+            this.BtnInformes_ckl.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.BtnInformes_ckl.IconColor = System.Drawing.Color.Gainsboro;
+            this.BtnInformes_ckl.IconSize = 22;
+            this.BtnInformes_ckl.Location = new System.Drawing.Point(0, 0);
+            this.BtnInformes_ckl.Name = "BtnInformes_ckl";
+            this.BtnInformes_ckl.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.BtnInformes_ckl.Rotation = 0D;
+            this.BtnInformes_ckl.Size = new System.Drawing.Size(143, 40);
+            this.BtnInformes_ckl.TabIndex = 11;
+            this.BtnInformes_ckl.Text = "CK Libranza";
+            this.BtnInformes_ckl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnInformes_ckl.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnInformes_ckl.UseVisualStyleBackColor = true;
+            this.BtnInformes_ckl.Click += new System.EventHandler(this.BtnInformes_colp_Click);
             // 
             // BtnInformes
             // 
@@ -252,7 +320,7 @@
             this.Btndia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(37)))), ((int)(((byte)(81)))));
             this.Btndia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btndia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Btndia.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btndia.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btndia.ForeColor = System.Drawing.Color.LightGray;
             this.Btndia.IconChar = FontAwesome.Sharp.IconChar.CalendarDay;
             this.Btndia.IconColor = System.Drawing.Color.Gainsboro;
@@ -279,7 +347,7 @@
             this.Btncklb.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(27)))), ((int)(((byte)(81)))));
             this.Btncklb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btncklb.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.Btncklb.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btncklb.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btncklb.ForeColor = System.Drawing.Color.LightGray;
             this.Btncklb.IconChar = FontAwesome.Sharp.IconChar.ThList;
             this.Btncklb.IconColor = System.Drawing.Color.Gainsboro;
@@ -377,6 +445,7 @@
             this.Text = "Vobo Pagador";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panelSideMenu.ResumeLayout(false);
+            this.panel_planos.ResumeLayout(false);
             this.panelinformes.ResumeLayout(false);
             this.panelCheques.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -396,12 +465,15 @@
         private System.Windows.Forms.Panel panelContenedor;
         private FontAwesome.Sharp.IconButton BtnColpensiones;
         private System.Windows.Forms.Panel panelinformes;
-        private FontAwesome.Sharp.IconButton BtnInformes_conv;
-        private FontAwesome.Sharp.IconButton BtnInformes_colp;
+        private FontAwesome.Sharp.IconButton BtnInformes_dia;
+        private FontAwesome.Sharp.IconButton BtnInformes_ckl;
         private FontAwesome.Sharp.IconButton BtnInformes;
         private FontAwesome.Sharp.IconButton Btndia;
         private FontAwesome.Sharp.IconButton Btncklb;
         private FontAwesome.Sharp.IconButton BtnCargue_archivos;
         private FontAwesome.Sharp.IconButton BtnCrear_planos;
+        private System.Windows.Forms.Panel panel_planos;
+        private FontAwesome.Sharp.IconButton Btnplanos_dia;
+        private FontAwesome.Sharp.IconButton Btnplanos_ckl;
     }
 }

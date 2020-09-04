@@ -40,7 +40,8 @@ namespace Usuarios_planta
             public static Color color3 = Color.FromArgb(253, 138, 114);
             public static Color color4 = Color.FromArgb(53, 41, 237);
             public static Color color5 = Color.FromArgb(56, 171, 179);
-            public static Color color6 = Color.FromArgb(56, 171, 179);
+            public static Color color6 = Color.FromArgb(255, 69, 0);
+            public static Color color7 = Color.FromArgb(75, 0, 130);
 
         }
 
@@ -82,6 +83,7 @@ namespace Usuarios_planta
         {
             panelCheques.Visible = false;
             panelinformes.Visible = false;
+            panel_planos.Visible = false;
             
         }
 
@@ -193,13 +195,29 @@ namespace Usuarios_planta
 
         private void BtnCrear_planos_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new Planos());
             
+            showSubMenu(panel_planos);
+
         }
 
         private void BtnCrear_planos_MouseHover(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+        }
+
+        private void Btnplanos_ckl_MouseHover(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color6);
+        }
+
+        private void Btnplanos_dia_MouseHover(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color7);
+        }
+
+        private void Btnplanos_ckl_Click(object sender, EventArgs e)
+        {
+            AbrirFormHijo(new Planos());
         }
     }
 }

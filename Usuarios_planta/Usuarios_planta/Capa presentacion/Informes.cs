@@ -29,7 +29,7 @@ namespace Usuarios_planta.Formularios
            
             if (cmb_Gestion.Text=="Negados")
             {
-                cmds.alta_negados(dtpfecha, dataGridView2);
+                cmds.buscar_negadosckl(dtpfecha, dataGridView2);
             }
             else if (cmb_Gestion.Text == "Contabilizados")
             {

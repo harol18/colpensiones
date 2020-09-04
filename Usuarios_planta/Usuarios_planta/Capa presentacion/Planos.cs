@@ -38,97 +38,115 @@ namespace Usuarios_planta.Capa_presentacion
 
         DateTime fecha = DateTime.Now;
 
-
-
         private void Btn_Crear_plano_Click(object sender, EventArgs e)
         {
-            
-            if (ch_plano_alta.Checked)
+            if (TxtCod_plano.Text == "")
             {
-                //Esta línea de código crea un archivo de texto para la exportación de datos.
-                StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_alta.Text + ".txt");
-                //StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtplano_alta.Text + ".txt");
-                try
-                {
-                    string sLine = "";
-
-                    //Este bucle for recorre cada fila de la tabla
-                    for (int r = 0; r <= dgv_altas.Rows.Count - 1; r++)
-                    {
-                        //Este bucle for recorre cada columna y el número de fila
-                        //se pasa desde el bucle for arriba.
-                        for (int c = 0; c <= dgv_altas.Columns.Count - 1; c++)
-                        {
-                            sLine = sLine + dgv_altas.Rows[r].Cells[c].Value;
-                            if (c != dgv_altas.Columns.Count - 1)
-                            {
-                                // Una coma se agrega como delimitador de texto para
-                                //para separar cada campo en el archivo de texto.
-                                //Puede elegir otro carácter como delimitador, para este caso no se pone delimitador dado
-                                //que el plano va toda la informacion pegada sin espacios ni caracteres.
-                                sLine = sLine + "";
-                            }
-                        }
-                        //El texto exportado se escribe en el archivo de texto, una línea a la vez.
-                        file.WriteLine(sLine);
-                        sLine = "";
-                    }
-
-                    file.Close();
-                    MessageBox.Show("Ok archivo txt creado.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    cmds.cargue_contabilizados(dgv_altas, dtp_cargue, Txtplano_alta);                
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    file.Close();
-                }
+                MessageBox.Show("Debe digitar el codigo del plano");
             }
-            else if (ch_plano_baja.Checked)
-            {
-                //Esta línea de código crea un archivo de texto para la exportación de datos.
-                StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_baja.Text + ".txt");
-                //StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtplano_baja.Text + ".txt");
-                try
-                {
-                    string sLine = "";
 
-                    //Este bucle for recorre cada fila de la tabla
-                    for (int r = 0; r <= dgv_bajas.Rows.Count - 1; r++)
-                    {
-                        //Este bucle for recorre cada columna y el número de fila
-                        //se pasa desde el bucle for arriba.
-                        for (int c = 0; c <= dgv_bajas.Columns.Count - 1; c++)
-                        {
-                            sLine = sLine + dgv_bajas.Rows[r].Cells[c].Value;
-                            if (c != dgv_bajas.Columns.Count - 1)
-                            {
-                                // Una coma se agrega como delimitador de texto para
-                                //para separar cada campo en el archivo de texto.
-                                //Puede elegir otro carácter como delimitador.
-                                sLine = sLine + "";
-                            }
-                        }
-                        //El texto exportado se escribe en el archivo de texto, una línea a la vez.
-                        file.WriteLine(sLine);
-                        sLine = "";
-                    }
-
-                    file.Close();
-                    MessageBox.Show("Ok archivo txt creado.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    file.Close();
-                }
-            }
             else
             {
-                MessageBox.Show("Debe seleccionar que plano va a crear");
+
+                if (ch_plano_alta.Checked)
+                {
+                    //Esta línea de código crea un archivo de texto para la exportación de datos.
+                    StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_alta.Text + ".txt");
+                    //StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtplano_alta.Text + ".txt");
+                    try
+                    {
+                        string sLine = "";
+
+                        //Este bucle for recorre cada fila de la tabla
+                        for (int r = 0; r <= dgv_altas.Rows.Count - 1; r++)
+                        {
+                            //Este bucle for recorre cada columna y el número de fila
+                            //se pasa desde el bucle for arriba.
+                            for (int c = 0; c <= dgv_altas.Columns.Count - 1; c++)
+                            {
+                                sLine = sLine + dgv_altas.Rows[r].Cells[c].Value;
+                                if (c != dgv_altas.Columns.Count - 1)
+                                {
+                                    // Una coma se agrega como delimitador de texto para
+                                    //para separar cada campo en el archivo de texto.
+                                    //Puede elegir otro carácter como delimitador, para este caso no se pone delimitador dado
+                                    //que el plano va toda la informacion pegada sin espacios ni caracteres.
+                                    sLine = sLine + "";
+                                }
+                            }
+                            //El texto exportado se escribe en el archivo de texto, una línea a la vez.
+                            file.WriteLine(sLine);
+                            sLine = "";
+                        }
+
+                        file.Close();
+                        MessageBox.Show("Ok archivo txt creado.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        if (cmb_Gestion2.Text=="Negados")
+                        {
+                            cmds.actualizar_cargueckl(dgv_altas,Txtplano_alta);
+                            cmds.planos_cargue(dgv_altas, Txtplano_alta);
+                            cmds.agregar_historico_colp(dgv_altas);
+                        }
+                        else if (cmb_Gestion2.Text == "Contabilizados")
+                        {
+                            cmds.cargue_contabilizados(dgv_altas, dtp_cargue, Txtplano_alta);
+                            cmds.planos_cargue(dgv_altas, Txtplano_alta);
+                        }
+
+                        
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        file.Close();
+                    }
+                }
+                else if (ch_plano_baja.Checked)
+                {
+                    //Esta línea de código crea un archivo de texto para la exportación de datos.
+                    StreamWriter file = new StreamWriter(@"C:\\Users\\BBVA\\Desktop\\Colpensiones\\" + Txtplano_baja.Text + ".txt");
+                    //StreamWriter file = new StreamWriter(@"D:\\Colpensiones\\" + Txtplano_baja.Text + ".txt");
+                    try
+                    {
+                        string sLine = "";
+
+                        //Este bucle for recorre cada fila de la tabla
+                        for (int r = 0; r <= dgv_bajas.Rows.Count - 1; r++)
+                        {
+                            //Este bucle for recorre cada columna y el número de fila
+                            //se pasa desde el bucle for arriba.
+                            for (int c = 0; c <= dgv_bajas.Columns.Count - 1; c++)
+                            {
+                                sLine = sLine + dgv_bajas.Rows[r].Cells[c].Value;
+                                if (c != dgv_bajas.Columns.Count - 1)
+                                {
+                                    // Una coma se agrega como delimitador de texto para
+                                    //para separar cada campo en el archivo de texto.
+                                    //Puede elegir otro carácter como delimitador.
+                                    sLine = sLine + "";
+                                }
+                            }
+                            //El texto exportado se escribe en el archivo de texto, una línea a la vez.
+                            file.WriteLine(sLine);
+                            sLine = "";
+                        }
+
+                        file.Close();
+                        MessageBox.Show("Ok archivo txt creado.", "Program Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show(err.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        file.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Debe seleccionar que plano va a crear");
+                }
             }
-        }
-      
+    }
 
         private void TxtCod_funcionario_TextChanged(object sender, EventArgs e)
         {
@@ -146,11 +164,11 @@ namespace Usuarios_planta.Capa_presentacion
         {
             if (cmb_Gestion2.Text == "Negados")
             {
-                cmds.alta_negados(dtp_cargue, dgv_altas);
+                cmds.buscar_negadosckl(dtp_cargue, dgv_altas);
             }
             else if (cmb_Gestion2.Text == "Pendiente Cargue")
             {
-                cmds.pendiente_cargue(dtp_cargue, dgv_altas);
+                //cmds.pendiente_cargue(dtp_cargue, dgv_altas);
 
             }
             else if (cmb_Gestion2.Text == "Contabilizados")
@@ -184,6 +202,29 @@ namespace Usuarios_planta.Capa_presentacion
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_busqueda_Click(object sender, EventArgs e)
+        {
+            cmds.busqueda_plano(dgv_datos_plano, Txtbusqueda);
+            dgv_datos_plano.Columns.Add("Dictamen", "Aprobada");
+        }
+
+        private void cmb_Gestion2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgv_altas.DataSource = null;
+            dgv_bajas.DataSource = null;
+
+            if (cmb_Gestion2.Text=="Negados")
+            {
+                
+                ch_plano_baja.Visible = false;
+
+            }
+            else if(cmb_Gestion2.Text == "Contabilizados")
+            {
+                ch_plano_baja.Visible = true;
+            }
         }
     }
 }

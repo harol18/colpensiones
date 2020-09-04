@@ -414,13 +414,13 @@ namespace Usuarios_planta
 
         }
 
-        public void alta_negados(DateTimePicker dtpproximo, DataGridView dataGridView2)
+        public void buscar_negadosckl(DateTimePicker dtpproximo, DataGridView dataGridView2)
         {
             try
             {
                 con.Open();
                 DataTable dt = new DataTable();
-                MySqlCommand cmd = new MySqlCommand("alta_negados", con);
+                MySqlCommand cmd = new MySqlCommand("buscar_negadosckl", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@_Proximo_Cargue", dtpproximo.Text);
                 MySqlDataAdapter registro = new MySqlDataAdapter(cmd);
@@ -646,7 +646,7 @@ namespace Usuarios_planta
 
         }
 
-        public void planos_cargue(DataGridView dgv_altas, TextBox Txtplano_alta, DateTimePicker dtp_cargue)
+        public void planos_cargue(DataGridView dgv_altas, TextBox Txtplano_alta)
         {
 
             try
@@ -699,7 +699,69 @@ namespace Usuarios_planta
                     cmd.Parameters.AddWithValue("@_Estado_cargue", "Ok Cargue");
                     cmd.Parameters.AddWithValue("@_Fecha_Cargue", fecha.ToString("dd/MM/yyyy"));
                     cmd.Parameters.AddWithValue("@_Fecha_desembolso", dtp_cargue.Text);
+                    cmd.Parameters.AddWithValue("@_Respuesta_Cargue", "Pdte Dictamen");
                     cmd.Parameters.AddWithValue("@_Plano", Txtplano_alta.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+                MessageBox.Show("Ok información actualizada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
+        public void actualizar_cargueckl(DataGridView dgv_altas,TextBox Txtplano_alta)
+        {
+
+            try
+            {
+
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("actualizar_cargueckl", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DataGridViewRow row in dgv_altas.Rows)
+                {
+                    cmd.Parameters.Clear();
+
+                    cmd.Parameters.AddWithValue("@_N_Afiliacion2", Convert.ToString(row.Cells[0].Value));
+                    cmd.Parameters.AddWithValue("@_Estado_cargue", "Ok Cargue");
+                    cmd.Parameters.AddWithValue("@_Fecha_Cargue", fecha.ToString("dd/MM/yyyy"));
+                    cmd.Parameters.AddWithValue("@_Respuesta_Cargue", "Pdte Dictamen");
+                    cmd.Parameters.AddWithValue("@_Plano", Txtplano_alta.Text);
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+                MessageBox.Show("Ok información actualizada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
+        public void agregar_historico_colp(DataGridView dgv_altas)
+        {
+            try
+            {
+
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("agregar_historico_colp", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DataGridViewRow row in dgv_altas.Rows)
+                {
+                    cmd.Parameters.Clear();
+
+                    cmd.Parameters.AddWithValue("@_N_Afiliacion2", Convert.ToString(row.Cells[0].Value));
                     cmd.ExecuteNonQuery();
                 }
                 con.Close();
