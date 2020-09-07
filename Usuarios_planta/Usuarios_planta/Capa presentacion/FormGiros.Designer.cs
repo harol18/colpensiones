@@ -34,8 +34,14 @@
             this.Txtconsecutivo = new System.Windows.Forms.TextBox();
             this.cmbdestino = new System.Windows.Forms.ComboBox();
             this.Txtentidad = new System.Windows.Forms.TextBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btncopy_pagare = new System.Windows.Forms.PictureBox();
             this.Txtpagare = new System.Windows.Forms.TextBox();
             this.Txtnit = new System.Windows.Forms.TextBox();
+            this.Btncopy = new System.Windows.Forms.PictureBox();
+            this.Btncopy1 = new System.Windows.Forms.PictureBox();
             this.Txttotal = new System.Windows.Forms.TextBox();
             this.Txttotal_letras = new System.Windows.Forms.TextBox();
             this.Txtcuota_letras = new System.Windows.Forms.TextBox();
@@ -68,6 +74,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Txttotal_recaudo = new System.Windows.Forms.TextBox();
             this.Txtafiliacion2 = new System.Windows.Forms.TextBox();
+            this.Btnbuscar = new System.Windows.Forms.PictureBox();
             this.TxtEstado_cliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -79,6 +86,7 @@
             this.TxtN_Plano = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.cmbestado = new System.Windows.Forms.ComboBox();
+            this.Btncopy2 = new System.Windows.Forms.PictureBox();
             this.TxtNomFuncionario = new System.Windows.Forms.TextBox();
             this.TxtIDfuncionario = new System.Windows.Forms.TextBox();
             this.cmbcargue = new System.Windows.Forms.ComboBox();
@@ -117,36 +125,29 @@
             this.lblfecha_actual = new System.Windows.Forms.Label();
             this.Btn_busqueda = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.Btncopy2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btncopy_pagare = new System.Windows.Forms.PictureBox();
-            this.Btncopy = new System.Windows.Forms.PictureBox();
-            this.Btncopy1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Btnbuscar = new System.Windows.Forms.PictureBox();
+            this.Btn_actualizar_rta = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos_plano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_busqueda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btncopy2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncopy_pagare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btncopy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btncopy1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Btnbuscar)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Btncopy2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos_plano)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Btn_busqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btnbuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -226,6 +227,57 @@
             this.Txtentidad.TabIndex = 12;
             this.Txtentidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.SystemColors.Menu;
+            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox8.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.pictureBox8.Location = new System.Drawing.Point(785, 62);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 156;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.SystemColors.Menu;
+            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox7.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.pictureBox7.Location = new System.Drawing.Point(349, 62);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 155;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.pictureBox5.Location = new System.Drawing.Point(588, 62);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(20, 24);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 154;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // btncopy_pagare
+            // 
+            this.btncopy_pagare.BackColor = System.Drawing.SystemColors.Menu;
+            this.btncopy_pagare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btncopy_pagare.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.btncopy_pagare.Location = new System.Drawing.Point(173, 98);
+            this.btncopy_pagare.Name = "btncopy_pagare";
+            this.btncopy_pagare.Size = new System.Drawing.Size(20, 24);
+            this.btncopy_pagare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btncopy_pagare.TabIndex = 153;
+            this.btncopy_pagare.TabStop = false;
+            this.btncopy_pagare.Click += new System.EventHandler(this.btncopy_pagare_Click);
+            // 
             // Txtpagare
             // 
             this.Txtpagare.BackColor = System.Drawing.SystemColors.Menu;
@@ -252,6 +304,32 @@
             this.Txtnit.TabIndex = 149;
             this.Txtnit.Text = "860034133";
             this.Txtnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Btncopy
+            // 
+            this.Btncopy.BackColor = System.Drawing.SystemColors.Menu;
+            this.Btncopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btncopy.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.Btncopy.Location = new System.Drawing.Point(629, 170);
+            this.Btncopy.Name = "Btncopy";
+            this.Btncopy.Size = new System.Drawing.Size(20, 24);
+            this.Btncopy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Btncopy.TabIndex = 146;
+            this.Btncopy.TabStop = false;
+            this.Btncopy.Click += new System.EventHandler(this.Btncopy_Click);
+            // 
+            // Btncopy1
+            // 
+            this.Btncopy1.BackColor = System.Drawing.SystemColors.Menu;
+            this.Btncopy1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btncopy1.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.Btncopy1.Location = new System.Drawing.Point(629, 132);
+            this.Btncopy1.Name = "Btncopy1";
+            this.Btncopy1.Size = new System.Drawing.Size(20, 24);
+            this.Btncopy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Btncopy1.TabIndex = 145;
+            this.Btncopy1.TabStop = false;
+            this.Btncopy1.Click += new System.EventHandler(this.Btncopy1_Click);
             // 
             // Txttotal
             // 
@@ -629,6 +707,19 @@
             this.Txtafiliacion2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Txtafiliacion2.Validated += new System.EventHandler(this.Txtafiliacion2_Validated);
             // 
+            // Btnbuscar
+            // 
+            this.Btnbuscar.BackColor = System.Drawing.SystemColors.Menu;
+            this.Btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btnbuscar.Image = global::Usuarios_planta.Properties.Resources.search_26px;
+            this.Btnbuscar.Location = new System.Drawing.Point(162, 30);
+            this.Btnbuscar.Name = "Btnbuscar";
+            this.Btnbuscar.Size = new System.Drawing.Size(20, 24);
+            this.Btnbuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Btnbuscar.TabIndex = 30;
+            this.Btnbuscar.TabStop = false;
+            this.Btnbuscar.Click += new System.EventHandler(this.Btnbuscar_Click);
+            // 
             // TxtEstado_cliente
             // 
             this.TxtEstado_cliente.BackColor = System.Drawing.SystemColors.Menu;
@@ -780,6 +871,18 @@
             this.cmbestado.Name = "cmbestado";
             this.cmbestado.Size = new System.Drawing.Size(148, 25);
             this.cmbestado.TabIndex = 13;
+            // 
+            // Btncopy2
+            // 
+            this.Btncopy2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btncopy2.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
+            this.Btncopy2.Location = new System.Drawing.Point(785, 156);
+            this.Btncopy2.Name = "Btncopy2";
+            this.Btncopy2.Size = new System.Drawing.Size(23, 23);
+            this.Btncopy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Btncopy2.TabIndex = 147;
+            this.Btncopy2.TabStop = false;
+            this.Btncopy2.Click += new System.EventHandler(this.Btncopy2_Click);
             // 
             // TxtNomFuncionario
             // 
@@ -1144,6 +1247,7 @@
             this.Txtbusqueda.BackColor = System.Drawing.SystemColors.Menu;
             this.Txtbusqueda.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txtbusqueda.Location = new System.Drawing.Point(861, 88);
+            this.Txtbusqueda.MaxLength = 50;
             this.Txtbusqueda.Multiline = true;
             this.Txtbusqueda.Name = "Txtbusqueda";
             this.Txtbusqueda.Size = new System.Drawing.Size(226, 26);
@@ -1170,7 +1274,7 @@
             this.dgv_datos_plano.Location = new System.Drawing.Point(861, 128);
             this.dgv_datos_plano.Name = "dgv_datos_plano";
             this.dgv_datos_plano.Size = new System.Drawing.Size(414, 497);
-            this.dgv_datos_plano.TabIndex = 54;
+            this.dgv_datos_plano.TabIndex = 67;
             // 
             // label36
             // 
@@ -1215,95 +1319,6 @@
             this.pictureBox12.TabIndex = 25;
             this.pictureBox12.TabStop = false;
             // 
-            // Btncopy2
-            // 
-            this.Btncopy2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btncopy2.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.Btncopy2.Location = new System.Drawing.Point(785, 156);
-            this.Btncopy2.Name = "Btncopy2";
-            this.Btncopy2.Size = new System.Drawing.Size(23, 23);
-            this.Btncopy2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Btncopy2.TabIndex = 147;
-            this.Btncopy2.TabStop = false;
-            this.Btncopy2.Click += new System.EventHandler(this.Btncopy2_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.SystemColors.Menu;
-            this.pictureBox8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox8.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.pictureBox8.Location = new System.Drawing.Point(785, 62);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(20, 24);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 156;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.SystemColors.Menu;
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.pictureBox7.Location = new System.Drawing.Point(349, 62);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(20, 24);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 155;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.SystemColors.Menu;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.pictureBox5.Location = new System.Drawing.Point(588, 62);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 24);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 154;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // btncopy_pagare
-            // 
-            this.btncopy_pagare.BackColor = System.Drawing.SystemColors.Menu;
-            this.btncopy_pagare.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btncopy_pagare.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.btncopy_pagare.Location = new System.Drawing.Point(173, 98);
-            this.btncopy_pagare.Name = "btncopy_pagare";
-            this.btncopy_pagare.Size = new System.Drawing.Size(20, 24);
-            this.btncopy_pagare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btncopy_pagare.TabIndex = 153;
-            this.btncopy_pagare.TabStop = false;
-            this.btncopy_pagare.Click += new System.EventHandler(this.btncopy_pagare_Click);
-            // 
-            // Btncopy
-            // 
-            this.Btncopy.BackColor = System.Drawing.SystemColors.Menu;
-            this.Btncopy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btncopy.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.Btncopy.Location = new System.Drawing.Point(629, 170);
-            this.Btncopy.Name = "Btncopy";
-            this.Btncopy.Size = new System.Drawing.Size(20, 24);
-            this.Btncopy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Btncopy.TabIndex = 146;
-            this.Btncopy.TabStop = false;
-            this.Btncopy.Click += new System.EventHandler(this.Btncopy_Click);
-            // 
-            // Btncopy1
-            // 
-            this.Btncopy1.BackColor = System.Drawing.SystemColors.Menu;
-            this.Btncopy1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btncopy1.Image = global::Usuarios_planta.Properties.Resources.copy_64px;
-            this.Btncopy1.Location = new System.Drawing.Point(629, 132);
-            this.Btncopy1.Name = "Btncopy1";
-            this.Btncopy1.Size = new System.Drawing.Size(20, 24);
-            this.Btncopy1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Btncopy1.TabIndex = 145;
-            this.Btncopy1.TabStop = false;
-            this.Btncopy1.Click += new System.EventHandler(this.Btncopy1_Click);
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(187)))), ((int)(((byte)(33)))));
@@ -1331,18 +1346,20 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // Btnbuscar
+            // Btn_actualizar_rta
             // 
-            this.Btnbuscar.BackColor = System.Drawing.SystemColors.Menu;
-            this.Btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btnbuscar.Image = global::Usuarios_planta.Properties.Resources.search_26px;
-            this.Btnbuscar.Location = new System.Drawing.Point(162, 30);
-            this.Btnbuscar.Name = "Btnbuscar";
-            this.Btnbuscar.Size = new System.Drawing.Size(20, 24);
-            this.Btnbuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Btnbuscar.TabIndex = 30;
-            this.Btnbuscar.TabStop = false;
-            this.Btnbuscar.Click += new System.EventHandler(this.Btnbuscar_Click);
+            this.Btn_actualizar_rta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(84)))));
+            this.Btn_actualizar_rta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_actualizar_rta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_actualizar_rta.Font = new System.Drawing.Font("SF Pro Display", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_actualizar_rta.ForeColor = System.Drawing.Color.White;
+            this.Btn_actualizar_rta.Location = new System.Drawing.Point(1181, 87);
+            this.Btn_actualizar_rta.Name = "Btn_actualizar_rta";
+            this.Btn_actualizar_rta.Size = new System.Drawing.Size(94, 27);
+            this.Btn_actualizar_rta.TabIndex = 68;
+            this.Btn_actualizar_rta.Text = "Actualizar";
+            this.Btn_actualizar_rta.UseVisualStyleBackColor = false;
+            this.Btn_actualizar_rta.Click += new System.EventHandler(this.Btn_actualizar_rta_Click);
             // 
             // FormGiros
             // 
@@ -1350,6 +1367,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1301, 710);
+            this.Controls.Add(this.Btn_actualizar_rta);
             this.Controls.Add(this.lblfecha_actual);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.dgv_datos_plano);
@@ -1375,26 +1393,26 @@
             this.Load += new System.EventHandler(this.FormGiros_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos_plano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btn_busqueda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btncopy2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncopy_pagare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btncopy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Btncopy1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Btnbuscar)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Btncopy2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epError)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_datos_plano)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Btn_busqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Btnbuscar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1499,5 +1517,6 @@
         private System.Windows.Forms.TextBox Txtconsecutivo;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label lblfecha_actual;
+        private System.Windows.Forms.Button Btn_actualizar_rta;
     }
 }

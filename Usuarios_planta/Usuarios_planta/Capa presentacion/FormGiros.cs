@@ -440,5 +440,10 @@ namespace Usuarios_planta.Formularios
             dgv_datos_plano.Columns.Add("Dictamen","Aprobada");
             
         }
+
+        private void Btn_actualizar_rta_Click(object sender, EventArgs e)
+        {
+            cmds.actualizar_rtackl(dgv_datos_plano);
+        }
     }
 }

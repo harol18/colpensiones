@@ -749,6 +749,37 @@ namespace Usuarios_planta
             }
         }
 
+        public void actualizar_rtackl(DataGridView dgv_datos_plano)
+        {
+
+            try
+            {
+
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("actualizar_rtackl", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DataGridViewRow row in dgv_datos_plano.Rows)
+                {
+                    cmd.Parameters.Clear();
+
+                    cmd.Parameters.AddWithValue("@_N_Afiliacion2", Convert.ToString(row.Cells[2].Value));
+                    cmd.Parameters.AddWithValue("@_Respuesta_Cargue", Convert.ToString(row.Cells[3].Value));
+                    cmd.Parameters.AddWithValue("@_Fecha_respuesta", fecha.ToString("dd/MM/yyyy"));
+                    cmd.ExecuteNonQuery();
+                }
+                con.Close();
+                MessageBox.Show("Ok información actualizada");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show("", ex.ToString());
+                con.Close();
+                MessageBox.Show("Conexion cerrada");
+
+            }
+        }
+
         public void agregar_historico_colp(DataGridView dgv_altas)
         {
             try
