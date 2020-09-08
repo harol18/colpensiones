@@ -22,7 +22,7 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormGiros : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=Indr42020$;database=dblibranza;port=3306;persistsecurityinfo=True;");
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
         
 
         Comandos cmds = new Comandos();
@@ -438,7 +438,7 @@ namespace Usuarios_planta.Formularios
         {
             cmds.busqueda_plano(dgv_datos_plano,Txtbusqueda);
             dgv_datos_plano.Columns.Add("Dictamen","Aprobada");
-            
+              
         }
 
         private void Btn_actualizar_rta_Click(object sender, EventArgs e)
