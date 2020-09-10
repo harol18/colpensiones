@@ -22,8 +22,9 @@ namespace Usuarios_planta.Formularios
 {
     public partial class FormGiros : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
-        
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
+
+
 
         Comandos cmds = new Comandos();
         Conversion c = new Conversion();
@@ -107,27 +108,27 @@ namespace Usuarios_planta.Formularios
             if (length=="6")
             {
                 Txtplano_dia.Text= "DIA000000" + Txtcedula.Text;
-                Txtplano_pre.Text= "PPRE000000" + Txtcedula.Text;
+                Txtplano_pre.Text= "PRE000000" + Txtcedula.Text;
             }
             else if (length == "7")
             {
                 Txtplano_dia.Text = "DIA00000" + Txtcedula.Text;
-                Txtplano_pre.Text = "PPRE00000" + Txtcedula.Text;
+                Txtplano_pre.Text = "PRE00000" + Txtcedula.Text;
             }
             else if (length == "8")
             {
                 Txtplano_dia.Text = "DIA0000" + Txtcedula.Text;
-                Txtplano_pre.Text = "PPRE0000" + Txtcedula.Text;
+                Txtplano_pre.Text = "PRE0000" + Txtcedula.Text;
             }
             else if (length == "9")
             {
                 Txtplano_dia.Text = "DIA000" + Txtcedula.Text;
-                Txtplano_pre.Text = "PPRE000" + Txtcedula.Text;
+                Txtplano_pre.Text = "PRE000" + Txtcedula.Text;
             }
             else if (length == "10")
             {
                 Txtplano_dia.Text = "DIA00" + Txtcedula.Text;
-                Txtplano_pre.Text = "PPRE00" + Txtcedula.Text;
+                Txtplano_pre.Text = "PRE00" + Txtcedula.Text;
             }          
         }
 
@@ -191,6 +192,14 @@ namespace Usuarios_planta.Formularios
                 MessageBox.Show("Caso no existe");
                 Btn_Actualizar.Enabled = false;
                 Btn_Guardar.Enabled = true;
+                dtpcargue.Text = "01/01/2020";
+                dtpfecha_desembolso.Text = "01/01/2020";
+                dtpproximo.Text = "01/01/2020";
+                dtpfecha_rpta.Text = "01/01/2020";
+                Txtnit.Text = "860034133";
+                cmbdestino.Text ="CPK Libranza";
+
+
             }
             else
             {
@@ -331,6 +340,9 @@ namespace Usuarios_planta.Formularios
 
                 Btn_Actualizar.Enabled = true;
                 Btn_Guardar.Enabled = true;
+                this.Close();
+                Form formulario = new FormGiros();
+                formulario.Show();
             }
         }
 
@@ -353,6 +365,9 @@ namespace Usuarios_planta.Formularios
 
                 Btn_Actualizar.Enabled = true;
                 Btn_Guardar.Enabled = true;
+                this.Close();
+                Form formulario = new FormGiros();
+                formulario.Show();
             }
         }
 
@@ -444,6 +459,21 @@ namespace Usuarios_planta.Formularios
         private void Btn_actualizar_rta_Click(object sender, EventArgs e)
         {
             cmds.actualizar_rtackl(dgv_datos_plano);
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetDataObject(Txttotal.Text, true);
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetDataObject(Txtplano_dia.Text, true);
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetDataObject(Txtplano_pre.Text, true);
         }
     }
 }

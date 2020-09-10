@@ -200,12 +200,14 @@
             // dtp_cargue
             // 
             this.dtp_cargue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dtp_cargue.CustomFormat = "dd/MM/yyyy";
             this.dtp_cargue.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_cargue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_cargue.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_cargue.Location = new System.Drawing.Point(12, 141);
             this.dtp_cargue.Name = "dtp_cargue";
             this.dtp_cargue.Size = new System.Drawing.Size(108, 25);
             this.dtp_cargue.TabIndex = 55;
+            
             // 
             // TxtCod_plano
             // 

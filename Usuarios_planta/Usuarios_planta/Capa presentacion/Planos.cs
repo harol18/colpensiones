@@ -14,9 +14,7 @@ namespace Usuarios_planta.Capa_presentacion
 {
     public partial class Planos : Form
     {
-        MySqlConnection con = new MySqlConnection("server=localhost;Uid=root;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
-      
-
+        MySqlConnection con = new MySqlConnection("server=localhost;Uid=;password=;database=dblibranza;port=3306;persistsecurityinfo=True;");
 
         Comandos cmds = new Comandos();
 
@@ -34,7 +32,6 @@ namespace Usuarios_planta.Capa_presentacion
         private void ch_plano_baja_CheckedChanged(object sender, EventArgs e)
         {
             ch_plano_alta.Checked = false;
-
         }
 
         DateTime fecha = DateTime.Now;
@@ -187,6 +184,7 @@ namespace Usuarios_planta.Capa_presentacion
         private void Planos_Load(object sender, EventArgs e)
         {
             
+
             lblfecha_actual.Text = fecha.ToString("dd/MM/yyyy");
 
             String sCadena = fecha.ToString("dd/MM/yyyy");
